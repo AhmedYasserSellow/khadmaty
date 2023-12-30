@@ -6,23 +6,34 @@ import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/widgets/snack_bar.dart';
 import 'package:graduation_project/features/auth/data/repos/auth_repo.dart';
 import 'package:graduation_project/features/auth/presentation/views/role_view.dart';
+import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
+import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 
 class AuthRepoImpl extends AuthRepo {
   @override
   Future signIn(BuildContext context, TextEditingController emailController,
       TextEditingController passwordController) async {
     try {
-      final prefs = await GetInstance.prefs;
       await GetInstance.auth.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
-      bool isRoleSelected = prefs.getBool(PrefsKeys.kIsRoleChoosed) ?? false;
+      final snapshot = await GetInstance.store
+          .collection(FirebaseConstants.kCollectionName)
+          .doc(emailController.text)
+          .get();
+      final prefs = await GetInstance.prefs;
+      prefs.setString(PrefsKeys.kEmail, emailController.text);
+      final role = snapshot.data()!['Role'] ?? '';
       if (context.mounted) {
-        if (isRoleSelected) {
+        HomeCubit.get(context).loadState();
+        if (role != '') {
+          Navigator.pushReplacementNamed(
+            context,
+            HomeView.id,
+          );
         } else {
           Navigator.pushReplacementNamed(
             context,
             RoleSelectorView.id,
-            arguments: emailController.text,
           );
         }
       }

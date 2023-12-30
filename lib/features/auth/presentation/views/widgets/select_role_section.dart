@@ -5,6 +5,7 @@ import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/role.dart';
+import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 
 class SelectRoleSection extends StatefulWidget {
   const SelectRoleSection({super.key, required this.email});
@@ -87,6 +88,10 @@ class _SelectRoleSectionState extends State<SelectRoleSection> {
                         SetOptions(
                           merge: true,
                         ));
+                if (context.mounted) {
+                  Navigator.pushReplacementNamed(context, HomeView.id,
+                      arguments: widget.email);
+                }
               }
               if (isUserSelected) {
                 await GetInstance.store
@@ -97,6 +102,10 @@ class _SelectRoleSectionState extends State<SelectRoleSection> {
                         SetOptions(
                           merge: true,
                         ));
+                if (context.mounted) {
+                  Navigator.pushReplacementNamed(context, HomeView.id,
+                      arguments: widget.email);
+                }
               }
             },
           ),

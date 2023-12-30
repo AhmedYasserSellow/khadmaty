@@ -15,79 +15,83 @@ class SignInView extends StatelessWidget {
   static String id = 'Sign In';
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthCubit, AuthState>(
-      builder: (context, state) {
-        return Scaffold(
-          appBar: const CustomAppBar(title: 'Sign In', trailing: []),
-          body: Padding(
-            padding: const EdgeInsets.only(
-              left: 24,
-              right: 24,
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Text('Welcome Back!', style: AuthTextStyles.header),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text('Sign in your account to continue',
-                      style: AuthTextStyles.subHeader),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  CustomTextField(
-                    controller: AuthCubit.get(context).signInEmailController,
-                    title: 'Email',
-                    icon: FontAwesomeIcons.envelope,
-                  ),
-                  CustomTextField(
-                    controller: AuthCubit.get(context).signInPasswordController,
-                    title: 'Password',
-                    icon: FontAwesomeIcons.lock,
-                  ),
-                  const RememberMe(),
-                  MainAuthButton(
-                    text: 'Sign In',
-                    onTap: () {
-                      AuthCubit.get(context).signIn(context);
-                    },
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  const Center(
-                    child: Text(
-                      "Don't have an account ?",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
+    return BlocProvider(
+      create: (context) => AuthCubit(),
+      child: BlocBuilder<AuthCubit, AuthState>(
+        builder: (context, state) {
+          return Scaffold(
+            appBar: const CustomAppBar(title: 'Sign In', trailing: []),
+            body: Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+                right: 24,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    Text('Welcome Back!', style: AuthTextStyles.header),
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    Text('Sign in your account to continue',
+                        style: AuthTextStyles.subHeader),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    CustomTextField(
+                      controller: AuthCubit.get(context).signInEmailController,
+                      title: 'Email',
+                      icon: FontAwesomeIcons.envelope,
+                    ),
+                    CustomTextField(
+                      controller:
+                          AuthCubit.get(context).signInPasswordController,
+                      title: 'Password',
+                      icon: FontAwesomeIcons.lock,
+                    ),
+                    const RememberMe(),
+                    MainAuthButton(
+                      text: 'Sign In',
+                      onTap: () {
+                        AuthCubit.get(context).signIn(context);
+                      },
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    const Center(
+                      child: Text(
+                        "Don't have an account ?",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  SecondaryAuthButton(
-                    text: 'Sign Up',
-                    onTap: () {
-                      Navigator.pushReplacementNamed(context, SignUpView.id);
-                    },
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                ],
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    SecondaryAuthButton(
+                      text: 'Sign Up',
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, SignUpView.id);
+                      },
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

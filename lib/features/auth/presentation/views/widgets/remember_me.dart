@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:graduation_project/core/utils/constants/prefs_keys.dart';
+import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 
-class RememberMe extends StatelessWidget {
+class RememberMe extends StatefulWidget {
   const RememberMe({super.key});
 
+  @override
+  State<RememberMe> createState() => _RememberMeState();
+}
+
+class _RememberMeState extends State<RememberMe> {
+  IconData icon = FontAwesomeIcons.square;
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,9 +21,21 @@ class RememberMe extends StatelessWidget {
       child: Row(
         children: [
           InkWell(
-            onTap: () {},
-            child: const Icon(
-              FontAwesomeIcons.square,
+            onTap: () async {
+              final prefs = await GetInstance.prefs;
+              if (isSelected) {
+                isSelected = !isSelected;
+                icon = FontAwesomeIcons.square;
+                prefs.setBool(PrefsKeys.kIsLoggedIn, false);
+              } else {
+                isSelected = !isSelected;
+                icon = FontAwesomeIcons.squareCheck;
+                prefs.setBool(PrefsKeys.kIsLoggedIn, true);
+              }
+              setState(() {});
+            },
+            child: Icon(
+              icon,
               size: 20,
               color: NeutralColors.k300,
             ),

@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/utils/routes/app_routes.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
-import 'package:graduation_project/features/auth/presentation/view_models/cubit/auth_cubit.dart';
-import 'package:graduation_project/features/auth/presentation/views/auth_view.dart';
+import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
+import 'package:graduation_project/features/splash/presentation/views/splash_view.dart';
 
 void main() async {
   await GetInstance.setupFirebase();
@@ -23,17 +23,13 @@ class Khadmaty extends StatelessWidget {
         statusBarColor: NeutralColors.k500,
       ),
     );
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => AuthCubit(),
-        ),
-      ],
+    return BlocProvider(
+      create: (context) => HomeCubit(),
       child: MaterialApp(
         theme: theme,
         debugShowCheckedModeBanner: false,
         routes: appRoutes,
-        initialRoute: AuthView.id,
+        initialRoute: SplashView.id,
       ),
     );
   }

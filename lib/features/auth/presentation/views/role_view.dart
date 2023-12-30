@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/select_role_section.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/text_styles.dart';
+import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 
 class RoleSelectorView extends StatelessWidget {
   const RoleSelectorView({super.key});
   static String id = 'RoleSelectorView';
   @override
   Widget build(BuildContext context) {
-    final email = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: const CustomAppBar(
         leading: SizedBox(),
@@ -36,7 +36,7 @@ class RoleSelectorView extends StatelessWidget {
               style: AuthTextStyles.subHeader,
             ),
             SelectRoleSection(
-              email: email,
+              email: HomeCubit.get(context).email,
             ),
           ],
         ),
