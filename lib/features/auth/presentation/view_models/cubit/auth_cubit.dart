@@ -14,10 +14,10 @@ class AuthCubit extends Cubit<AuthState> {
       TextEditingController();
   final TextEditingController signUpPasswordController =
       TextEditingController();
-
+  final TextEditingController signUpNameController = TextEditingController();
   Future signUp(BuildContext context) async {
-    GetInstance.authRepoImpl
-        .signUp(context, signUpEmailController, signUpPasswordController);
+    GetInstance.authRepoImpl.signUp(context, signUpEmailController,
+        signUpPasswordController, signUpNameController);
   }
 
   Future signIn(BuildContext context) async {

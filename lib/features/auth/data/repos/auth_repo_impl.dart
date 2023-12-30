@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/utils/constants/firebase_constants.dart';
 import 'package:graduation_project/core/utils/constants/prefs_keys.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/widgets/snack_bar.dart';
@@ -18,7 +19,11 @@ class AuthRepoImpl extends AuthRepo {
       if (context.mounted) {
         if (isRoleSelected) {
         } else {
-          Navigator.pushReplacementNamed(context, RoleSelectorView.id);
+          Navigator.pushReplacementNamed(
+            context,
+            RoleSelectorView.id,
+            arguments: emailController.text,
+          );
         }
       }
     } on FirebaseAuthException catch (e) {
@@ -47,11 +52,29 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future signUp(BuildContext context, TextEditingController emailController,
-      TextEditingController passwordController) async {
+  Future signUp(
+    BuildContext context,
+    TextEditingController emailController,
+    TextEditingController passwordController,
+    TextEditingController nameController,
+  ) async {
     try {
-      await GetInstance.auth.createUserWithEmailAndPassword(
-          email: emailController.text, password: passwordController.text);
+      final UserCredential user =
+          await GetInstance.auth.createUserWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      user;
+      user.user!.updateDisplayName(nameController.text);
+      await GetInstance.store
+          .collection(FirebaseConstants.kCollectionName)
+          .doc(emailController.text)
+          .set(
+        {
+          FirebaseConstants.kName: nameController.text,
+          FirebaseConstants.kEmail: emailController.text,
+        },
+      );
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           customSnackBar(

@@ -8,6 +8,7 @@ class RoleSelectorView extends StatelessWidget {
   static String id = 'RoleSelectorView';
   @override
   Widget build(BuildContext context) {
+    final email = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: const CustomAppBar(
         leading: SizedBox(),
@@ -34,7 +35,9 @@ class RoleSelectorView extends StatelessWidget {
               'Which type of user are you?',
               style: AuthTextStyles.subHeader,
             ),
-            const SelectRoleSection(),
+            SelectRoleSection(
+              email: email,
+            ),
           ],
         ),
       ),

@@ -1,12 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/utils/constants/firebase_constants.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/role.dart';
 
 class SelectRoleSection extends StatefulWidget {
-  const SelectRoleSection({super.key});
-
+  const SelectRoleSection({super.key, required this.email});
+  final String email;
   @override
   State<SelectRoleSection> createState() => _SelectRoleSectionState();
 }
@@ -76,8 +78,26 @@ class _SelectRoleSectionState extends State<SelectRoleSection> {
           child: MainAuthButton(
             text: 'Continue',
             onTap: () async {
-              if (isProviderSelected) {}
-              if (isUserSelected) {}
+              if (isProviderSelected) {
+                await GetInstance.store
+                    .collection(FirebaseConstants.kCollectionName)
+                    .doc(widget.email)
+                    .set(
+                        {FirebaseConstants.kRole: 'Provider'},
+                        SetOptions(
+                          merge: true,
+                        ));
+              }
+              if (isUserSelected) {
+                await GetInstance.store
+                    .collection(FirebaseConstants.kCollectionName)
+                    .doc(widget.email)
+                    .set(
+                        {FirebaseConstants.kRole: 'User'},
+                        SetOptions(
+                          merge: true,
+                        ));
+              }
             },
           ),
         )

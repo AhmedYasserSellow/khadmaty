@@ -38,6 +38,11 @@ class SignUpView extends StatelessWidget {
                     height: 32,
                   ),
                   CustomTextField(
+                    controller: AuthCubit.get(context).signUpNameController,
+                    title: 'Your Name',
+                    icon: FontAwesomeIcons.user,
+                  ),
+                  CustomTextField(
                     controller: AuthCubit.get(context).signUpEmailController,
                     title: 'Email',
                     icon: FontAwesomeIcons.envelope,
