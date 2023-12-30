@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "320319839450",
+    "project_id": "khadmaty-71e8b",
+    "storage_bucket": "khadmaty-71e8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320319839450:android:e27c11ce19b144b068d9e3",
+        "android_client_info": {
+          "package_name": "com.example.graduation_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9yC2ngXWPLWkixP2d9V5B6unwFzLcaw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
