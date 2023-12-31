@@ -5,7 +5,7 @@ import 'package:graduation_project/core/utils/constants/prefs_keys.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/widgets/snack_bar.dart';
 import 'package:graduation_project/features/auth/data/repos/auth_repo.dart';
-import 'package:graduation_project/features/auth/presentation/views/role_view.dart';
+import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 

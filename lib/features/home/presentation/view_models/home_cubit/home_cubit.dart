@@ -11,11 +11,13 @@ class HomeCubit extends Cubit<HomeState> {
   static HomeCubit get(context) => BlocProvider.of(context);
   bool isHome = true;
   bool loggedIn = false;
+  bool isRoleChossed = false;
   String email = '';
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   Future loadState() async {
     final prefs = await GetInstance.prefs;
     loggedIn = prefs.getBool(PrefsKeys.kIsLoggedIn) ?? false;
+    isRoleChossed = prefs.getBool(PrefsKeys.kIsRoleChoosed) ?? false;
     email = prefs.getString(PrefsKeys.kEmail) ?? '';
   }
 

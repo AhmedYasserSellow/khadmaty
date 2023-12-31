@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/auth/presentation/views/auth_view.dart';
-import 'package:graduation_project/features/auth/presentation/views/role_view.dart';
+import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';

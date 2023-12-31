@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/constants/assets.dart';
 import 'package:graduation_project/features/auth/presentation/views/auth_view.dart';
+import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 
@@ -20,7 +21,11 @@ class SplashView extends StatelessWidget {
           ),
           splashIconSize: MediaQuery.of(context).size.width * 3 / 4,
           duration: 1500,
-          nextScreen: cubit.loggedIn ? const HomeView() : const AuthView(),
+          nextScreen: cubit.loggedIn
+              ? cubit.isRoleChossed
+                  ? const HomeView()
+                  : const RoleSelectorView()
+              : const AuthView(),
         );
       },
     );
