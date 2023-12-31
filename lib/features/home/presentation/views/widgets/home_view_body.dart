@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/constants/services_list.dart';
-import 'package:graduation_project/features/home/data/models/profile_model.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/profile_box.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/balance_box.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/service_box.dart';
 
-class UserView extends StatelessWidget {
-  const UserView({super.key, required this.profileModel});
-  final ProfileModel profileModel;
+class HomeViewBody extends StatelessWidget {
+  const HomeViewBody({super.key, required this.name});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,8 +18,8 @@ class UserView extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          ProfileBox(
-            profileModel: profileModel,
+          BalanceBoxBlurred(
+            name: name,
           ),
           const SizedBox(
             height: 16,

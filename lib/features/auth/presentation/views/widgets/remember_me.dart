@@ -20,7 +20,7 @@ class _RememberMeState extends State<RememberMe> {
       padding: const EdgeInsets.only(bottom: 24),
       child: Row(
         children: [
-          InkWell(
+          GestureDetector(
             onTap: () async {
               final prefs = await GetInstance.prefs;
               if (isSelected) {
@@ -34,21 +34,26 @@ class _RememberMeState extends State<RememberMe> {
               }
               setState(() {});
             },
-            child: Icon(
-              icon,
-              size: 20,
-              color: NeutralColors.k300,
-            ),
-          ),
-          const SizedBox(
-            width: 8,
-          ),
-          const Text(
-            'Remember me',
-            style: TextStyle(
-              color: NeutralColors.k500,
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  icon,
+                  size: 20,
+                  color: NeutralColors.k300,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                const Text(
+                  'Remember me',
+                  style: TextStyle(
+                    color: NeutralColors.k500,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
             ),
           ),
           const Spacer(),
