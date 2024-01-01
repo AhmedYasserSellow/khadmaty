@@ -13,12 +13,14 @@ class HomeCubit extends Cubit<HomeState> {
   bool loggedIn = false;
   bool isRoleChossed = false;
   String email = '';
+  String name = '';
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   Future loadState() async {
     final prefs = await GetInstance.prefs;
     loggedIn = prefs.getBool(PrefsKeys.kIsLoggedIn) ?? false;
     isRoleChossed = prefs.getBool(PrefsKeys.kIsRoleChoosed) ?? false;
     email = prefs.getString(PrefsKeys.kEmail) ?? '';
+    name = prefs.getString(PrefsKeys.kName) ?? '';
   }
 
   Future logOut(BuildContext context) async {

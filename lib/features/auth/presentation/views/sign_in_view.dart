@@ -8,7 +8,7 @@ import 'package:graduation_project/features/auth/presentation/views/widgets/main
 import 'package:graduation_project/features/auth/presentation/views/widgets/remember_me.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/text_fields.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/text_styles.dart';
+import 'package:graduation_project/core/utils/theme/text_styles.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -33,12 +33,12 @@ class SignInView extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    Text('Welcome Back!', style: AuthTextStyles.header),
+                    Text('Welcome Back!', style: AuthAndRoleTextStyles.header),
                     const SizedBox(
                       height: 4,
                     ),
                     Text('Sign in your account to continue',
-                        style: AuthTextStyles.subHeader),
+                        style: AuthAndRoleTextStyles.subHeader),
                     const SizedBox(
                       height: 32,
                     ),

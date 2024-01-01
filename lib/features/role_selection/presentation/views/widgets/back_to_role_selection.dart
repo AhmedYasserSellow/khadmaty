@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
-import 'package:graduation_project/features/role_selection/presentation/view_models/role_cubit/role_cubit.dart';
+import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
 
 class BackToRoleSelectionView extends StatelessWidget {
   const BackToRoleSelectionView({
@@ -12,7 +12,7 @@ class BackToRoleSelectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        RoleCubit.get(context).unSubmitRole;
+        Navigator.pushReplacementNamed(context, RoleSelectorView.id);
       },
       icon: Container(
         width: 32,

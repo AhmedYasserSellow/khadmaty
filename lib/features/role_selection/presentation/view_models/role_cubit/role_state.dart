@@ -9,3 +9,5 @@ final class RoleChanged extends RoleState {}
 final class RoleProviderSubmitted extends RoleState {}
 
 final class RoleProviderUnSubmitted extends RoleState {}
+
+final class JobSelected extends RoleState {}

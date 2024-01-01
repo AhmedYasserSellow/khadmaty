@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:graduation_project/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:graduation_project/features/home/data/repos/home_repo_impl.dart';
+import 'package:graduation_project/features/role_selection/data/repos/role_job_repo_impl.dart';
 import 'package:graduation_project/firebase_options.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,6 +32,7 @@ abstract class GetInstance {
     getIt.registerSingleton<FirebaseFirestore>(FirebaseFirestore.instance);
     getIt.registerSingleton<AuthRepoImpl>(AuthRepoImpl());
     getIt.registerSingleton<HomeRepoImpl>(HomeRepoImpl());
+    getIt.registerSingleton<RoleAndJobRepoImpl>(RoleAndJobRepoImpl());
   }
 
   static final auth = getIt.get<FirebaseAuth>();
@@ -38,4 +40,5 @@ abstract class GetInstance {
   static final prefs = getIt.getAsync<SharedPreferences>();
   static final authRepoImpl = getIt.get<AuthRepoImpl>();
   static final homeRepoImpl = getIt.get<HomeRepoImpl>();
+  static final roleAndJobRepoImpl = getIt.get<RoleAndJobRepoImpl>();
 }

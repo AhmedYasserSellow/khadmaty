@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 
-abstract class AuthTextStyles {
+abstract class AuthAndRoleTextStyles {
   static TextStyle header = const TextStyle(
     color: NeutralColors.k500,
     fontSize: 16,

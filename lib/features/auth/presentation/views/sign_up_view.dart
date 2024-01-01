@@ -7,7 +7,7 @@ import 'package:graduation_project/features/auth/presentation/views/sign_in_view
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/text_fields.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/text_styles.dart';
+import 'package:graduation_project/core/utils/theme/text_styles.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -30,12 +30,13 @@ class SignUpView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Create an Account', style: AuthTextStyles.header),
+                    Text('Create an Account',
+                        style: AuthAndRoleTextStyles.header),
                     const SizedBox(
                       height: 4,
                     ),
                     Text('Sign up your account to continue',
-                        style: AuthTextStyles.subHeader),
+                        style: AuthAndRoleTextStyles.subHeader),
                     const SizedBox(
                       height: 32,
                     ),

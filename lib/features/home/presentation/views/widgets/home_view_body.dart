@@ -12,38 +12,46 @@ class HomeViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
         horizontal: 24,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 32,
-          ),
-          BalanceBoxBlurred(
-            name: name,
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const Text(
-            'Available Service',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
+      child: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 32,
             ),
           ),
-          Expanded(
-            child: GridView.builder(
-              itemCount: servicesList.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+          SliverOpacity(
+            opacity: 0.99,
+            sliver: SliverToBoxAdapter(
+              child: BalanceBoxBlurred(
+                name: name,
               ),
-              itemBuilder: (context, index) {
-                return ServiceBox(
-                  serviceModel: servicesList[index],
-                );
-              },
             ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 16,
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: Text(
+              'Available Service',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          SliverGrid.builder(
+            itemCount: servicesList.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            itemBuilder: (context, index) {
+              return ServiceBox(
+                serviceModel: servicesList[index],
+              );
+            },
           ),
         ],
       ),

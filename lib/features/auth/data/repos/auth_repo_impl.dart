@@ -22,7 +22,9 @@ class AuthRepoImpl extends AuthRepo {
           .get();
       final prefs = await GetInstance.prefs;
       prefs.setString(PrefsKeys.kEmail, emailController.text);
-      final role = snapshot.data()!['Role'] ?? '';
+      prefs.setString(
+          PrefsKeys.kName, snapshot.data()![FirebaseConstants.kName]);
+      final role = snapshot.data()![FirebaseConstants.kRole] ?? '';
       if (context.mounted) {
         HomeCubit.get(context).loadState();
         if (role != '') {

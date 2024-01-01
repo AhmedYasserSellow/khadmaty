@@ -5,6 +5,7 @@ import 'package:graduation_project/core/utils/constants/firebase_constants.dart'
 import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
+import 'package:graduation_project/core/widgets/logo.dart';
 import 'package:graduation_project/features/home/data/models/profile_model.dart';
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/end_drawer.dart';
@@ -28,20 +29,14 @@ class HomeView extends StatelessWidget {
                 endDrawer: EndDrawer(
                   profileModel: ProfileModel(
                     name: snapshot.data![FirebaseConstants.kName],
-                    email: snapshot.data![FirebaseConstants.kEmail],
+                    email: HomeCubit.get(context).email,
                     image:
                         '${Assets.kAssetsPath}/${snapshot.data![FirebaseConstants.kRole]}.png'
                             .toLowerCase(),
                   ),
                 ),
                 appBar: CustomAppBar(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    child: Image.asset(
-                      Assets.kLogo,
-                      width: 35,
-                    ),
-                  ),
+                  leading: const Logo(),
                   title: 'Khadmaty',
                   trailing: [
                     IconButton(

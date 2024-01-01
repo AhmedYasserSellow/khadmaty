@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/text_styles.dart';
+import 'package:graduation_project/core/utils/theme/text_styles.dart';
+import 'package:graduation_project/features/role_selection/data/models/role_model.dart';
 
 class Role extends StatelessWidget {
   const Role({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.imageName,
-    this.elevation = 5,
+    required this.isSelected,
+    required this.roleModel,
     this.onTap,
-    this.border,
   });
-  final String title;
-  final String subtitle;
-  final String imageName;
-  final double elevation;
-  final BoxBorder? border;
+  final RoleModel roleModel;
+  final bool isSelected;
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Material(
-        elevation: elevation,
+        elevation: isSelected ? 20 : 5,
         borderRadius: BorderRadius.circular(32),
         child: Container(
           padding: const EdgeInsets.all(16),
           width: double.infinity,
           height: 120,
           decoration: BoxDecoration(
-            border: border,
+            border: isSelected
+                ? Border.all(
+                    color: SecondaryColors.main,
+                    width: 2,
+                  )
+                : null,
             borderRadius: BorderRadius.circular(32),
             color: NeutralColors.kWhite,
           ),
@@ -43,7 +43,7 @@ class Role extends StatelessWidget {
                 height: 80,
                 width: 80,
                 child: Image.asset(
-                  imageName,
+                  roleModel.imageName,
                 ),
               ),
               const SizedBox(
@@ -53,15 +53,15 @@ class Role extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
-                    style: AuthTextStyles.header,
+                    roleModel.title,
+                    style: AuthAndRoleTextStyles.header,
                   ),
                   const SizedBox(
                     height: 4,
                   ),
                   Text(
-                    subtitle,
-                    style: AuthTextStyles.subHeader,
+                    roleModel.subtitle,
+                    style: AuthAndRoleTextStyles.subHeader,
                   ),
                 ],
               )
