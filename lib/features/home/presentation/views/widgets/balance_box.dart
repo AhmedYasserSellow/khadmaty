@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/add_money_button.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class BalanceBoxView extends StatelessWidget {
   const BalanceBoxView({
@@ -97,9 +98,9 @@ class BalanceBoxBlurred extends StatelessWidget {
         Center(
           child: Transform.rotate(
             angle: math.pi / 10,
-            child: const Text(
-              'Payment Service is coming Soon',
-              style: TextStyle(
+            child: Text(
+              S.of(context).payment_service,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,

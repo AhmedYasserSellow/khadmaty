@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/constants/prefs_keys.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class RememberMe extends StatefulWidget {
   const RememberMe({super.key});
@@ -45,9 +46,9 @@ class _RememberMeState extends State<RememberMe> {
                 const SizedBox(
                   width: 8,
                 ),
-                const Text(
-                  'Remember me',
-                  style: TextStyle(
+                Text(
+                  S.of(context).remember_me,
+                  style: const TextStyle(
                     color: NeutralColors.k500,
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -57,9 +58,9 @@ class _RememberMeState extends State<RememberMe> {
             ),
           ),
           const Spacer(),
-          const Text(
-            'Forgot password ?',
-            style: TextStyle(
+          Text(
+            S.of(context).forgot_password,
+            style: const TextStyle(
               color: NeutralColors.k500,
               fontSize: 14,
               fontWeight: FontWeight.w400,

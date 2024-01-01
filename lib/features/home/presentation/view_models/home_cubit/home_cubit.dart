@@ -15,6 +15,14 @@ class HomeCubit extends Cubit<HomeState> {
   String email = '';
   String name = '';
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  bool en = true;
+  String locale = 'en';
+  changeLocale() async {
+    if (en) {
+      en = false;
+    }
+  }
+
   Future loadState() async {
     final prefs = await GetInstance.prefs;
     loggedIn = prefs.getBool(PrefsKeys.kIsLoggedIn) ?? false;

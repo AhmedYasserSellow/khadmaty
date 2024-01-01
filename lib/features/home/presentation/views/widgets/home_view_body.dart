@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/constants/services_list.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/balance_box.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/service_box.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key, required this.name});
@@ -32,10 +33,10 @@ class HomeViewBody extends StatelessWidget {
               height: 16,
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Text(
-              'Available Service',
-              style: TextStyle(
+              S.of(context).available_services,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -43,13 +44,13 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           SliverGrid.builder(
-            itemCount: servicesList.length,
+            itemCount: servicesList(context).length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
             itemBuilder: (context, index) {
               return ServiceBox(
-                serviceModel: servicesList[index],
+                serviceModel: servicesList(context)[index],
               );
             },
           ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
+import 'package:graduation_project/core/widgets/lang_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({super.key});
@@ -21,35 +23,41 @@ class AuthView extends StatelessWidget {
         ),
         child: Column(
           children: [
+            const Row(
+              children: [
+                Spacer(),
+                LanguageButton(),
+              ],
+            ),
             const Spacer(),
             Column(
               children: [
                 AuthButton(
                   color: PrimaryColors.main,
-                  text: 'Continue with Email',
+                  text: S.of(context).auth_email,
                   icon: FontAwesomeIcons.solidEnvelope,
                   onTap: () {
                     Navigator.pushNamed(context, SignInView.id);
                   },
                 ),
-                const AuthButton(
+                AuthButton(
                   color: Colors.black,
-                  text: 'Continue with Apple',
+                  text: S.of(context).auth_apple,
                   icon: FontAwesomeIcons.apple,
                 ),
-                const AuthButton(
-                  color: Color(0xff5483EC),
-                  text: 'Continue with Google',
+                AuthButton(
+                  color: const Color(0xff5483EC),
+                  text: S.of(context).auth_google,
                   icon: FontAwesomeIcons.google,
                 ),
-                const AuthButton(
-                  color: Color(0xff425692),
-                  text: 'Continue with Facebook',
+                AuthButton(
+                  color: const Color(0xff425692),
+                  text: S.of(context).auth_facebook,
                   icon: FontAwesomeIcons.facebook,
                 ),
-                const Text(
-                  "Don't have an account?",
-                  style: TextStyle(
+                Text(
+                  S.of(context).no_account,
+                  style: const TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -57,7 +65,7 @@ class AuthView extends StatelessWidget {
                   height: 24,
                 ),
                 SecondaryAuthButton(
-                  text: 'Sign Up',
+                  text: S.of(context).sign_up,
                   onTap: () {
                     Navigator.pushNamed(context, SignUpView.id);
                   },

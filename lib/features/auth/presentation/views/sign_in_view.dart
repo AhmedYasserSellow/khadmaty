@@ -9,6 +9,7 @@ import 'package:graduation_project/features/auth/presentation/views/widgets/reme
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/text_fields.dart';
 import 'package:graduation_project/core/utils/theme/text_styles.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -20,7 +21,8 @@ class SignInView extends StatelessWidget {
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: const CustomAppBar(title: 'Sign In', trailing: []),
+            appBar:
+                CustomAppBar(title: S.of(context).sign_in, trailing: const []),
             body: Padding(
               padding: const EdgeInsets.only(
                 left: 24,
@@ -33,29 +35,30 @@ class SignInView extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    Text('Welcome Back!', style: AuthAndRoleTextStyles.header),
+                    Text(S.of(context).sign_in_header,
+                        style: AuthAndRoleTextStyles.header),
                     const SizedBox(
                       height: 4,
                     ),
-                    Text('Sign in your account to continue',
+                    Text(S.of(context).sign_in_sub_header,
                         style: AuthAndRoleTextStyles.subHeader),
                     const SizedBox(
                       height: 32,
                     ),
                     CustomTextField(
                       controller: AuthCubit.get(context).signInEmailController,
-                      title: 'Email',
+                      title: S.of(context).email,
                       icon: FontAwesomeIcons.envelope,
                     ),
                     CustomTextField(
                       controller:
                           AuthCubit.get(context).signInPasswordController,
-                      title: 'Password',
+                      title: S.of(context).password,
                       icon: FontAwesomeIcons.lock,
                     ),
                     const RememberMe(),
                     MainAuthButton(
-                      text: 'Sign In',
+                      text: S.of(context).sign_in,
                       onTap: () {
                         AuthCubit.get(context).signIn(context);
                       },
@@ -63,10 +66,10 @@ class SignInView extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    const Center(
+                    Center(
                       child: Text(
-                        "Don't have an account ?",
-                        style: TextStyle(
+                        S.of(context).no_account,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
@@ -77,7 +80,7 @@ class SignInView extends StatelessWidget {
                       height: 32,
                     ),
                     SecondaryAuthButton(
-                      text: 'Sign Up',
+                      text: S.of(context).sign_up,
                       onTap: () {
                         Navigator.pushReplacementNamed(context, SignUpView.id);
                       },

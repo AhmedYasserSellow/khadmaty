@@ -45,8 +45,10 @@ class RoleAndJobRepoImpl extends RoleAndJobRepo {
         .doc(email)
         .set(
             {
-          FirebaseConstants.kRole:
-              servicesList[index].name.replaceAll(' ', '_').toLowerCase(),
+          FirebaseConstants.kRole: servicesList(context)[index]
+              .enName
+              .replaceAll(' ', '_')
+              .toLowerCase(),
         },
             SetOptions(
               merge: true,

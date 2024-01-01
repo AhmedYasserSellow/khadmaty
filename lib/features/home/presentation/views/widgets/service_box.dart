@@ -32,7 +32,7 @@ class ServiceBox extends StatelessWidget {
                 height: 16,
               ),
               Text(
-                serviceModel.name,
+                serviceModel.usedName,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,

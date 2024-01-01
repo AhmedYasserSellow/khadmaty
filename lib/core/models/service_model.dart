@@ -1,6 +1,11 @@
 class ServiceModel {
-  final String name;
+  final String enName;
   final String logo;
+  final String usedName;
 
-  ServiceModel({required this.name, required this.logo, or});
+  ServiceModel({
+    required this.enName,
+    required this.logo,
+    required this.usedName,
+  });
 }

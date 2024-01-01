@@ -12,41 +12,20 @@ class ProviderRoleSelectionSection extends StatelessWidget {
     return BlocBuilder<RoleCubit, RoleState>(
       builder: (context, state) {
         return SliverGrid.builder(
-          itemCount: servicesList.length,
+          itemCount: servicesList(context).length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
           itemBuilder: (BuildContext context, int index) {
             return RoleServiceBox(
               isSelected: RoleCubit.get(context).currentIndex == index,
-              serviceModel: servicesList[index],
+              serviceModel: servicesList(context)[index],
               onTap: () {
                 RoleCubit.get(context).selectJob(index);
               },
             );
           },
         );
-
-        // return Column(
-        //   children: [
-        //     const SizedBox(
-        //       height: 120,
-        //     ),
-        //      // const SizedBox(
-        //     //   height: 40,
-        //     // ),
-        //     // Opacity(
-        //     //   opacity: RoleCubit.get(context).isProviderSelected ||
-        //     //           RoleCubit.get(context).isUserSelected
-        //     //       ? 1
-        //     //       : 0.5,
-        //     //   child: MainAuthButton(
-        //     //     text: 'Continue',
-        //     //     onTap: () async {},
-        //     //   ),
-        //     // ),
-        //   ],
-        // );
       },
     );
   }

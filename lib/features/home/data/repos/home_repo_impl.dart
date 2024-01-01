@@ -9,6 +9,7 @@ class HomeRepoImpl extends HomeRepo {
   Future logOut(BuildContext context) async {
     final prefs = await GetInstance.prefs;
     prefs.setBool(PrefsKeys.kIsLoggedIn, false);
+    prefs.setBool(PrefsKeys.kIsRoleChoosed, false);
     GetInstance.auth.signOut();
 
     if (context.mounted) {

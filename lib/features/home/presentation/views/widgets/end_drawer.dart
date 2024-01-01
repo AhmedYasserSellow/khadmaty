@@ -5,6 +5,7 @@ import 'package:graduation_project/features/home/data/models/profile_model.dart'
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer_item.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/log_out.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class EndDrawer extends StatelessWidget {
   const EndDrawer({super.key, required this.profileModel});
@@ -37,21 +38,21 @@ class EndDrawer extends StatelessWidget {
               height: 16,
             ),
             Text(
-              'Name: ' '${profileModel.name}',
+              '${S.of(context).your_name}: ' '${profileModel.name}',
               style: const TextStyle(color: Colors.black, fontSize: 18),
             ),
             const SizedBox(
               height: 4,
             ),
             Text(
-              'Email: ' '${profileModel.email}',
+              '${S.of(context).email}: ' '${profileModel.email}',
               style: const TextStyle(color: Colors.black, fontSize: 18),
             ),
             const SizedBox(
               height: 16,
             ),
             DrawerItem(
-              text: 'Home',
+              text: S.of(context).home,
               icon: FontAwesomeIcons.house,
               onTap: () {
                 HomeCubit.get(context).changePage(true);
@@ -59,7 +60,7 @@ class EndDrawer extends StatelessWidget {
               isSelected: HomeCubit.get(context).isHome,
             ),
             DrawerItem(
-              text: 'Chats',
+              text: S.of(context).chats,
               icon: FontAwesomeIcons.message,
               onTap: () {
                 HomeCubit.get(context).changePage(false);
@@ -71,9 +72,9 @@ class EndDrawer extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const Text(
-              '© 2023 Khadmaty All rights reserved.',
-              style: TextStyle(
+            Text(
+              S.of(context).copy_right,
+              style: const TextStyle(
                 fontSize: 12,
               ),
             ),

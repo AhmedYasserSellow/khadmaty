@@ -8,6 +8,7 @@ import 'package:graduation_project/features/auth/presentation/views/widgets/main
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/text_fields.dart';
 import 'package:graduation_project/core/utils/theme/text_styles.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -19,7 +20,8 @@ class SignUpView extends StatelessWidget {
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: const CustomAppBar(title: 'Sign Up', trailing: []),
+            appBar:
+                CustomAppBar(title: S.of(context).sign_up, trailing: const []),
             body: Padding(
               padding: const EdgeInsets.only(
                 left: 24,
@@ -30,34 +32,34 @@ class SignUpView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Create an Account',
+                    Text(S.of(context).sign_in_header,
                         style: AuthAndRoleTextStyles.header),
                     const SizedBox(
                       height: 4,
                     ),
-                    Text('Sign up your account to continue',
+                    Text(S.of(context).sign_up_sub_header,
                         style: AuthAndRoleTextStyles.subHeader),
                     const SizedBox(
                       height: 32,
                     ),
                     CustomTextField(
                       controller: AuthCubit.get(context).signUpNameController,
-                      title: 'Your Name',
+                      title: S.of(context).your_name,
                       icon: FontAwesomeIcons.user,
                     ),
                     CustomTextField(
                       controller: AuthCubit.get(context).signUpEmailController,
-                      title: 'Email',
+                      title: S.of(context).email,
                       icon: FontAwesomeIcons.envelope,
                     ),
                     CustomTextField(
                       controller:
                           AuthCubit.get(context).signUpPasswordController,
-                      title: 'Password',
+                      title: S.of(context).password,
                       icon: FontAwesomeIcons.lock,
                     ),
                     MainAuthButton(
-                      text: 'Sign Up',
+                      text: S.of(context).sign_up,
                       onTap: () {
                         AuthCubit.get(context).signUp(context);
                       },
@@ -65,10 +67,10 @@ class SignUpView extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    const Center(
+                    Center(
                       child: Text(
-                        "Already have an account ?",
-                        style: TextStyle(
+                        S.of(context).already_have_an_account,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
@@ -79,7 +81,7 @@ class SignUpView extends StatelessWidget {
                       height: 32,
                     ),
                     SecondaryAuthButton(
-                      text: 'Sign In',
+                      text: S.of(context).sign_in,
                       onTap: () {
                         Navigator.pushReplacementNamed(context, SignInView.id);
                       },

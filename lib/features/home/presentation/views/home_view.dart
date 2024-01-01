@@ -10,6 +10,7 @@ import 'package:graduation_project/features/home/data/models/profile_model.dart'
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/end_drawer.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -37,7 +38,7 @@ class HomeView extends StatelessWidget {
                 ),
                 appBar: CustomAppBar(
                   leading: const Logo(),
-                  title: 'Khadmaty',
+                  title: S.of(context).title,
                   trailing: [
                     IconButton(
                       color: Colors.white,

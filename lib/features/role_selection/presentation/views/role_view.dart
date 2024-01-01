@@ -4,6 +4,7 @@ import 'package:graduation_project/core/widgets/app_bar.dart';
 import 'package:graduation_project/core/widgets/logo.dart';
 import 'package:graduation_project/features/role_selection/presentation/view_models/role_cubit/role_cubit.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/widgets/select_role_section.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class RoleSelectorView extends StatelessWidget {
   const RoleSelectorView({super.key});
@@ -14,13 +15,13 @@ class RoleSelectorView extends StatelessWidget {
       create: (context) => RoleCubit(),
       child: BlocBuilder<RoleCubit, RoleState>(
         builder: (context, state) {
-          return const Scaffold(
+          return Scaffold(
             appBar: CustomAppBar(
-              leading: Logo(),
-              title: 'Role Selector',
-              trailing: [],
+              leading: const Logo(),
+              title: S.of(context).role_selector,
+              trailing: const [],
             ),
-            body: Padding(
+            body: const Padding(
               padding: EdgeInsets.only(
                 left: 24,
                 right: 24,

@@ -6,6 +6,7 @@ import 'package:graduation_project/core/utils/theme/text_styles.dart';
 import 'package:graduation_project/features/role_selection/data/models/role_model.dart';
 import 'package:graduation_project/features/role_selection/presentation/view_models/role_cubit/role_cubit.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/widgets/role.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class SelectRoleSection extends StatelessWidget {
   const SelectRoleSection({
@@ -19,14 +20,14 @@ class SelectRoleSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Choose your role',
+              S.of(context).role_selector_header,
               style: AuthAndRoleTextStyles.header,
             ),
             const SizedBox(
               height: 4,
             ),
             Text(
-              'Which type of user are you?',
+              S.of(context).role_selector_sub_header,
               style: AuthAndRoleTextStyles.subHeader,
             ),
             const SizedBox(
@@ -39,8 +40,8 @@ class SelectRoleSection extends StatelessWidget {
               },
               roleModel: RoleModel(
                 imageName: Assets.kProvider,
-                title: 'Provider',
-                subtitle: '',
+                title: S.of(context).provider_header,
+                subtitle: S.of(context).provider_sub_header,
               ),
             ),
             const SizedBox(
@@ -53,8 +54,8 @@ class SelectRoleSection extends StatelessWidget {
               },
               roleModel: RoleModel(
                 imageName: Assets.kUser,
-                title: 'User',
-                subtitle: '',
+                title: S.of(context).user_header,
+                subtitle: S.of(context).user_sub_header,
               ),
             ),
             const Spacer(),
@@ -64,7 +65,7 @@ class SelectRoleSection extends StatelessWidget {
                   ? 1
                   : 0.5,
               child: MainAuthButton(
-                text: 'Continue',
+                text: S.of(context).continue_,
                 onTap: () {
                   RoleCubit.get(context).submitRole(context);
                 },
