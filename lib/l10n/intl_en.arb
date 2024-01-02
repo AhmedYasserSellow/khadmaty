@@ -17,6 +17,7 @@
     "already_have_an_account" : "Already have an account ?",
     "sign_up_header" : "Create an account",
     "sign_up_sub_header" : "Create a new account to continue",
+    "account_created" : "You have successfully created an account",
     "role_selector" : "Role Selector",
     "role_selector_header" : "Choose your role",
     "role_selector_sub_header" : "Which type of user are you ?",
@@ -36,11 +37,11 @@
     "blacksmith" : "Blacksmith",
     "tailor" : "Tailor",
     "house_cleaner" : "House Cleaner",
-    "title" : "Khadmaty",
+    "title" : "Khdmaty",
     "payment_service" : "Payment service is coming soon",
     "available_services" : "Available Services",
     "home" : "Home",
     "chats" : "Chats",
-    "sign_out" : "sign-out",
+    "sign_out" : "Sign Out",
     "copy_right" : "© 2023 Khadmaty All rights reserved."
 }

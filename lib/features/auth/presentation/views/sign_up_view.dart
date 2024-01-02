@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
 import 'package:graduation_project/features/auth/presentation/view_models/auth_cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/eye.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/text_fields.dart';
@@ -53,6 +54,8 @@ class SignUpView extends StatelessWidget {
                       icon: FontAwesomeIcons.envelope,
                     ),
                     CustomTextField(
+                      isObscured: AuthCubit.get(context).isObscured,
+                      suffix: const Eye(),
                       controller:
                           AuthCubit.get(context).signUpPasswordController,
                       title: S.of(context).password,

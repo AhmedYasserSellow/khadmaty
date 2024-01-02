@@ -230,6 +230,16 @@ class S {
     );
   }
 
+  /// `You have successfully created an account`
+  String get account_created {
+    return Intl.message(
+      'You have successfully created an account',
+      name: 'account_created',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Role Selector`
   String get role_selector {
     return Intl.message(
@@ -420,10 +430,10 @@ class S {
     );
   }
 
-  /// `Khadmaty`
+  /// `Khdmaty`
   String get title {
     return Intl.message(
-      'Khadmaty',
+      'Khdmaty',
       name: 'title',
       desc: '',
       args: [],
@@ -470,10 +480,10 @@ class S {
     );
   }
 
-  /// `sign-out`
+  /// `Sign Out`
   String get sign_out {
     return Intl.message(
-      'sign-out',
+      'Sign Out',
       name: 'sign_out',
       desc: '',
       args: [],

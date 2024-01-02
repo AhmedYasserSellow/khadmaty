@@ -6,7 +6,7 @@ import 'package:graduation_project/features/home/data/repos/home_repo.dart';
 
 class HomeRepoImpl extends HomeRepo {
   @override
-  Future logOut(BuildContext context) async {
+  Future signOut(BuildContext context) async {
     final prefs = await GetInstance.prefs;
     prefs.setBool(PrefsKeys.kIsLoggedIn, false);
     prefs.setBool(PrefsKeys.kIsRoleChoosed, false);

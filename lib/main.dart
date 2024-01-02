@@ -12,11 +12,11 @@ import 'package:graduation_project/generated/l10n.dart';
 void main() async {
   await GetInstance.setupFirebase();
   await GetInstance.registerInstances();
-  runApp(const Khadmaty());
+  runApp(const Khdmaty());
 }
 
-class Khadmaty extends StatelessWidget {
-  const Khadmaty({super.key});
+class Khdmaty extends StatelessWidget {
+  const Khdmaty({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,8 @@ class Khadmaty extends StatelessWidget {
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return MaterialApp(
-            locale: const Locale('ar'),
+            title: 'Khdmaty',
+            locale: Locale(HomeCubit.get(context).locale),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

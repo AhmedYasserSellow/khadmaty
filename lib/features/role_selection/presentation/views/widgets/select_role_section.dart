@@ -16,65 +16,72 @@ class SelectRoleSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RoleCubit, RoleState>(
       builder: (context, state) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              S.of(context).role_selector_header,
-              style: AuthAndRoleTextStyles.header,
-            ),
-            const SizedBox(
-              height: 4,
-            ),
-            Text(
-              S.of(context).role_selector_sub_header,
-              style: AuthAndRoleTextStyles.subHeader,
-            ),
-            const SizedBox(
-              height: 120,
-            ),
-            Role(
-              isSelected: RoleCubit.get(context).isProviderSelected,
-              onTap: () {
-                RoleCubit.get(context).selectProvider(true);
-              },
-              roleModel: RoleModel(
-                imageName: Assets.kProvider,
-                title: S.of(context).provider_header,
-                subtitle: S.of(context).provider_sub_header,
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 32,
               ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Role(
-              isSelected: RoleCubit.get(context).isUserSelected,
-              onTap: () {
-                RoleCubit.get(context).selectProvider(false);
-              },
-              roleModel: RoleModel(
-                imageName: Assets.kUser,
-                title: S.of(context).user_header,
-                subtitle: S.of(context).user_sub_header,
+              Text(
+                S.of(context).role_selector_header,
+                style: AuthAndRoleTextStyles.header,
               ),
-            ),
-            const Spacer(),
-            Opacity(
-              opacity: RoleCubit.get(context).isProviderSelected ||
-                      RoleCubit.get(context).isUserSelected
-                  ? 1
-                  : 0.5,
-              child: MainAuthButton(
-                text: S.of(context).continue_,
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                S.of(context).role_selector_sub_header,
+                style: AuthAndRoleTextStyles.subHeader,
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Role(
+                isSelected: RoleCubit.get(context).isProviderSelected,
                 onTap: () {
-                  RoleCubit.get(context).submitRole(context);
+                  RoleCubit.get(context).selectProvider(true);
                 },
+                roleModel: RoleModel(
+                  imageName: Assets.kProvider,
+                  title: S.of(context).provider_header,
+                  subtitle: S.of(context).provider_sub_header,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 80,
-            )
-          ],
+              const SizedBox(
+                height: 40,
+              ),
+              Role(
+                isSelected: RoleCubit.get(context).isUserSelected,
+                onTap: () {
+                  RoleCubit.get(context).selectProvider(false);
+                },
+                roleModel: RoleModel(
+                  imageName: Assets.kUser,
+                  title: S.of(context).user_header,
+                  subtitle: S.of(context).user_sub_header,
+                ),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              Opacity(
+                opacity: RoleCubit.get(context).isProviderSelected ||
+                        RoleCubit.get(context).isUserSelected
+                    ? 1
+                    : 0.5,
+                child: MainAuthButton(
+                  text: S.of(context).continue_,
+                  onTap: () {
+                    RoleCubit.get(context).submitRole(context);
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+            ],
+          ),
         );
       },
     );

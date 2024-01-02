@@ -14,7 +14,7 @@ class LogOutButton extends StatelessWidget {
     return DrawerItem(
       isSelected: false,
       onTap: () async {
-        HomeCubit.get(context).logOut(context);
+        HomeCubit.get(context).signOut(context);
       },
       text: S.of(context).sign_out,
       icon: FontAwesomeIcons.arrowRightFromBracket,

@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
     return StreamBuilder(
         stream: GetInstance.store
             .collection(FirebaseConstants.kCollectionName)
-            .doc(HomeCubit.get(context).email)
+            .doc(HomeCubit.get(context).uID)
             .snapshots(),
         builder: (context, snapshot) {
           return BlocBuilder<HomeCubit, HomeState>(
@@ -29,12 +29,10 @@ class HomeView extends StatelessWidget {
                 key: HomeCubit.get(context).scaffoldKey,
                 endDrawer: EndDrawer(
                   profileModel: ProfileModel(
-                    name: snapshot.data![FirebaseConstants.kName],
-                    email: HomeCubit.get(context).email,
-                    image:
-                        '${Assets.kAssetsPath}/${snapshot.data![FirebaseConstants.kRole]}.png'
-                            .toLowerCase(),
-                  ),
+                      name: snapshot.data?[FirebaseConstants.kName] ?? '',
+                      email: HomeCubit.get(context).email,
+                      image:
+                          '${Assets.kAssetsPath}/${snapshot.data?[FirebaseConstants.kRole]}.png'),
                 ),
                 appBar: CustomAppBar(
                   leading: const Logo(),
@@ -56,9 +54,7 @@ class HomeView extends StatelessWidget {
                 ),
                 body: snapshot.hasData
                     ? HomeCubit.get(context).isHome
-                        ? HomeViewBody(
-                            name: snapshot.data![FirebaseConstants.kName],
-                          )
+                        ? const HomeViewBody()
                         : const SizedBox()
                     : const Center(
                         child: CircularProgressIndicator(

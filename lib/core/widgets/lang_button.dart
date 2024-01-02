@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
+import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/generated/l10n.dart';
 
 class LanguageButton extends StatelessWidget {
@@ -8,7 +9,9 @@ class LanguageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        HomeCubit.get(context).changeLocale();
+      },
       child: Container(
         height: 32,
         width: 74,

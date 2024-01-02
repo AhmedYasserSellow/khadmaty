@@ -5,42 +5,42 @@ import 'package:graduation_project/generated/l10n.dart';
 
 List<ServiceModel> servicesList(BuildContext context) => [
       ServiceModel(
-        enName: 'Carpanter',
+        imageName: 'carpenter',
         usedName: S.of(context).carpenter,
         logo: Assets.kCarpenter,
       ),
       ServiceModel(
-        enName: 'Plumber',
+        imageName: 'plumber',
         usedName: S.of(context).plumber,
         logo: Assets.kPlumber,
       ),
       ServiceModel(
-        enName: 'Painter',
+        imageName: 'painter',
         usedName: S.of(context).painter,
         logo: Assets.kPainter,
       ),
       ServiceModel(
-        enName: 'Electrician',
+        imageName: 'electrician',
         usedName: S.of(context).electrician,
         logo: Assets.kElectrician,
       ),
       ServiceModel(
-        enName: 'iron_man',
+        imageName: 'iron_man',
         usedName: S.of(context).iron_man,
         logo: Assets.kIronMan,
       ),
       ServiceModel(
-        enName: 'blacksmith',
+        imageName: 'blacksmith',
         usedName: S.of(context).blacksmith,
         logo: Assets.kBlacksmith,
       ),
       ServiceModel(
-        enName: 'tailor',
+        imageName: 'tailor',
         usedName: S.of(context).tailor,
         logo: Assets.kTailor,
       ),
       ServiceModel(
-        enName: 'House Cleaner',
+        imageName: 'house_cleaner',
         usedName: S.of(context).house_cleaner,
         logo: Assets.kHouseCleaner,
       ),

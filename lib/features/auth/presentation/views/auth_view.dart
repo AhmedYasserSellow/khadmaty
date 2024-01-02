@@ -6,6 +6,8 @@ import 'package:graduation_project/features/auth/presentation/views/sign_in_view
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/auth_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/secondary_auth_button.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/terms_text.dart';
+import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/generated/l10n.dart';
 
 class AuthView extends StatelessWidget {
@@ -73,46 +75,9 @@ class AuthView extends StatelessWidget {
                 const SizedBox(
                   height: 32,
                 ),
-                const Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text:
-                            'By clicking “Continue with Email/Apple/Google/Facebook” above, you agree to Lance hub ',
-                        style: TextStyle(
-                          color: NeutralColors.k300,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Terms & Conditional',
-                        style: TextStyle(
-                          color: PrimaryColors.main,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      TextSpan(
-                        text: ' and ',
-                        style: TextStyle(
-                          color: NeutralColors.k300,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Privacy Policy.',
-                        style: TextStyle(
-                          color: PrimaryColors.main,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                )
+                HomeCubit.get(context).en
+                    ? const TermsTextEN()
+                    : const TermsTextAR(),
               ],
             ),
           ],

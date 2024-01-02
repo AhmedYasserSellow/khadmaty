@@ -9,9 +9,8 @@ import 'package:graduation_project/generated/l10n.dart';
 class BalanceBoxView extends StatelessWidget {
   const BalanceBoxView({
     super.key,
-    required this.name,
   });
-  final String name;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,14 +21,14 @@ class BalanceBoxView extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
         color: NeutralColors.kWhiteGrey,
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Balance',
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
-          const Row(
+          Row(
             children: [
               Text(
                 'EGP 000,000,000',
@@ -43,7 +42,7 @@ class BalanceBoxView extends StatelessWidget {
               Icon(FontAwesomeIcons.eye)
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 8,
           ),
           Row(
@@ -51,19 +50,19 @@ class BalanceBoxView extends StatelessWidget {
               Expanded(
                 flex: 10,
                 child: Text(
-                  name,
+                  'Khdmaty',
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 8,
               ),
-              const Spacer(),
-              const AddMoneyButton(),
+              Spacer(),
+              AddMoneyButton(),
             ],
           )
         ],
@@ -73,17 +72,16 @@ class BalanceBoxView extends StatelessWidget {
 }
 
 class BalanceBoxBlurred extends StatelessWidget {
-  const BalanceBoxBlurred({super.key, required this.name});
-  final String name;
+  const BalanceBoxBlurred({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
-        BalanceBoxView(
-          name: name,
-        ),
+        const BalanceBoxView(),
         Positioned.fill(
           child: BackdropFilter(
             filter: ImageFilter.blur(

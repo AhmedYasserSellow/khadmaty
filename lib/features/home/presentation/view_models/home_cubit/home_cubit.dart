@@ -14,13 +14,23 @@ class HomeCubit extends Cubit<HomeState> {
   bool isRoleChossed = false;
   String email = '';
   String name = '';
+  String uID = '';
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool en = true;
   String locale = 'en';
+
   changeLocale() async {
+    final prefs = await GetInstance.prefs;
     if (en) {
-      en = false;
+      en = !en;
+      prefs.setString(PrefsKeys.kLocale, 'ar');
+      locale = 'ar';
+    } else {
+      en = !en;
+      prefs.setString(PrefsKeys.kLocale, 'en');
+      locale = 'en';
     }
+    emit(ChangeLocaleSuccess());
   }
 
   Future loadState() async {
@@ -29,10 +39,18 @@ class HomeCubit extends Cubit<HomeState> {
     isRoleChossed = prefs.getBool(PrefsKeys.kIsRoleChoosed) ?? false;
     email = prefs.getString(PrefsKeys.kEmail) ?? '';
     name = prefs.getString(PrefsKeys.kName) ?? '';
+    locale = prefs.getString(PrefsKeys.kLocale) ?? 'en';
+    uID = prefs.getString(PrefsKeys.kUID) ?? '';
+    if (locale == 'en') {
+      en = true;
+    } else if (locale == 'ar') {
+      en = false;
+    }
+    emit(LoadStateSuccess());
   }
 
-  Future logOut(BuildContext context) async {
-    GetInstance.homeRepoImpl.logOut(context);
+  Future signOut(BuildContext context) async {
+    GetInstance.homeRepoImpl.signOut(context);
   }
 
   void changePage(bool isHomePage) {

@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "account_created": MessageLookupByLibrary.simpleMessage(
+            "You have successfully created an account"),
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("Already have an account ?"),
         "auth_apple":
@@ -72,14 +74,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_in_header": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "sign_in_sub_header": MessageLookupByLibrary.simpleMessage(
             "Sign in to with your account to continue"),
-        "sign_out": MessageLookupByLibrary.simpleMessage("sign-out"),
+        "sign_out": MessageLookupByLibrary.simpleMessage("Sign Out"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "sign_up_header":
             MessageLookupByLibrary.simpleMessage("Create an account"),
         "sign_up_sub_header": MessageLookupByLibrary.simpleMessage(
             "Create a new account to continue"),
         "tailor": MessageLookupByLibrary.simpleMessage("Tailor"),
-        "title": MessageLookupByLibrary.simpleMessage("Khadmaty"),
+        "title": MessageLookupByLibrary.simpleMessage("Khdmaty"),
         "user_header": MessageLookupByLibrary.simpleMessage("User"),
         "user_sub_header": MessageLookupByLibrary.simpleMessage(""),
         "your_name": MessageLookupByLibrary.simpleMessage("Your Name")

@@ -7,10 +7,14 @@ class CustomTextField extends StatelessWidget {
     required this.title,
     required this.icon,
     required this.controller,
+    this.suffix,
+    this.isObscured = false,
   });
   final String title;
   final IconData icon;
   final TextEditingController controller;
+  final Widget? suffix;
+  final bool isObscured;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,6 +32,7 @@ class CustomTextField extends StatelessWidget {
           height: 8,
         ),
         TextField(
+          obscureText: isObscured,
           controller: controller,
           style: const TextStyle(color: Colors.black),
           decoration: InputDecoration(
@@ -44,6 +49,7 @@ class CustomTextField extends StatelessWidget {
               color: NeutralColors.k200,
               size: 16,
             ),
+            suffixIcon: suffix,
             hintText: title,
             hintStyle: const TextStyle(
               color: NeutralColors.k200,

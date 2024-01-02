@@ -5,8 +5,10 @@ import 'package:graduation_project/features/home/presentation/views/widgets/serv
 import 'package:graduation_project/generated/l10n.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key, required this.name});
-  final String name;
+  const HomeViewBody({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,12 +22,10 @@ class HomeViewBody extends StatelessWidget {
               height: 32,
             ),
           ),
-          SliverOpacity(
+          const SliverOpacity(
             opacity: 0.99,
             sliver: SliverToBoxAdapter(
-              child: BalanceBoxBlurred(
-                name: name,
-              ),
+              child: BalanceBoxBlurred(),
             ),
           ),
           const SliverToBoxAdapter(
@@ -53,6 +53,11 @@ class HomeViewBody extends StatelessWidget {
                 serviceModel: servicesList(context)[index],
               );
             },
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 16,
+            ),
           ),
         ],
       ),
