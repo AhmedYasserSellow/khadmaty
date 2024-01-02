@@ -21,7 +21,7 @@ class RoleAndJobRepoImpl extends RoleAndJobRepo {
           .collection(FirebaseConstants.kCollectionName)
           .doc(prefs.getString(PrefsKeys.kUID))
           .set(
-              {FirebaseConstants.kRole: 'User'},
+              {FirebaseConstants.kRole: 'user'},
               SetOptions(
                 merge: true,
               ));
