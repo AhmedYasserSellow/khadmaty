@@ -26,6 +26,7 @@ class SplashView extends StatelessWidget {
                   ? const HomeView()
                   : const RoleSelectorView()
               : const AuthView(),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         );
       },
     );

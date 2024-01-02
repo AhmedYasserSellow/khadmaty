@@ -27,6 +27,9 @@ class AuthView extends StatelessWidget {
               children: [
                 Spacer(),
                 LanguageButton(),
+                SizedBox(
+                  width: 24,
+                ),
               ],
             ),
             const Spacer(),
