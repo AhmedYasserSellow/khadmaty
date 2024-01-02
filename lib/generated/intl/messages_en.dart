@@ -54,9 +54,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose your job"),
         "job_selector_sub_header":
             MessageLookupByLibrary.simpleMessage("What job can you offer ?"),
+        "lang_name": MessageLookupByLibrary.simpleMessage("English"),
+        "languages": MessageLookupByLibrary.simpleMessage("Languages"),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "other_lang": MessageLookupByLibrary.simpleMessage("عربى"),
+        "other_lang_name": MessageLookupByLibrary.simpleMessage("Arabic"),
         "painter": MessageLookupByLibrary.simpleMessage("Painter"),
         "password": MessageLookupByLibrary.simpleMessage("Passwrod"),
         "payment_service": MessageLookupByLibrary.simpleMessage(

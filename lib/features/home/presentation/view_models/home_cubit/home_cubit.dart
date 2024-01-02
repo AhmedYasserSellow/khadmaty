@@ -33,6 +33,17 @@ class HomeCubit extends Cubit<HomeState> {
     emit(ChangeLocaleSuccess());
   }
 
+  changeLocaleFromHomePage(String value) async {
+    locale = value;
+    if (locale == 'en') {
+      en = false;
+      changeLocale();
+    } else if (locale == 'ar') {
+      en = true;
+      changeLocale();
+    }
+  }
+
   Future loadState() async {
     final prefs = await GetInstance.prefs;
     loggedIn = prefs.getBool(PrefsKeys.kIsLoggedIn) ?? false;

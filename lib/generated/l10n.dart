@@ -499,6 +499,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Languages`
+  String get languages {
+    return Intl.message(
+      'Languages',
+      name: 'languages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get lang_name {
+    return Intl.message(
+      'English',
+      name: 'lang_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get other_lang_name {
+    return Intl.message(
+      'Arabic',
+      name: 'other_lang_name',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -43,5 +43,9 @@
     "home" : "Home",
     "chats" : "Chats",
     "sign_out" : "Sign Out",
-    "copy_right" : "© 2023 Khadmaty All rights reserved."
+    "copy_right" : "© 2023 Khadmaty All rights reserved.",
+    "languages" : "Languages",
+    "lang_name" : "English",
+    "other_lang_name" : "Arabic"
+
 }
