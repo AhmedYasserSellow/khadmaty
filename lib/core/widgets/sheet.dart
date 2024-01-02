@@ -8,7 +8,7 @@ class Sheet extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Color.fromRGBO(250, 250, 250, 1),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(
             32,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/core/widgets/back_arrow.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
