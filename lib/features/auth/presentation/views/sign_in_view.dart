@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
+import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/auth/presentation/view_models/auth_cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/eye.dart';
@@ -24,72 +25,99 @@ class SignInView extends StatelessWidget {
           return Scaffold(
             appBar:
                 CustomAppBar(title: S.of(context).sign_in, trailing: const []),
-            body: Padding(
-              padding: const EdgeInsets.only(
-                left: 24,
-                right: 24,
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 32,
+            body: Sheet(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 24,
+                  right: 24,
+                ),
+                child: CustomScrollView(
+                  slivers: [
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 32,
+                      ),
                     ),
-                    Text(S.of(context).sign_in_header,
-                        style: AuthAndRoleTextStyles.header),
-                    const SizedBox(
-                      height: 4,
+                    SliverToBoxAdapter(
+                      child: Text(S.of(context).sign_in_header,
+                          style: AuthAndRoleTextStyles.header),
                     ),
-                    Text(S.of(context).sign_in_sub_header,
-                        style: AuthAndRoleTextStyles.subHeader),
-                    const SizedBox(
-                      height: 32,
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 4,
+                      ),
                     ),
-                    CustomTextField(
-                      controller: AuthCubit.get(context).signInEmailController,
-                      title: S.of(context).email,
-                      icon: FontAwesomeIcons.envelope,
+                    SliverToBoxAdapter(
+                      child: Text(S.of(context).sign_in_sub_header,
+                          style: AuthAndRoleTextStyles.subHeader),
                     ),
-                    CustomTextField(
-                      isObscured: AuthCubit.get(context).isObscured,
-                      controller:
-                          AuthCubit.get(context).signInPasswordController,
-                      title: S.of(context).password,
-                      icon: FontAwesomeIcons.lock,
-                      suffix: const Eye(),
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 32,
+                      ),
                     ),
-                    const RememberMe(),
-                    MainAuthButton(
-                      text: S.of(context).sign_in,
-                      onTap: () {
-                        AuthCubit.get(context).signIn(context);
-                      },
+                    SliverToBoxAdapter(
+                      child: CustomTextField(
+                        controller:
+                            AuthCubit.get(context).signInEmailController,
+                        title: S.of(context).email,
+                        icon: FontAwesomeIcons.envelope,
+                      ),
                     ),
-                    const SizedBox(
-                      height: 32,
+                    SliverToBoxAdapter(
+                      child: CustomTextField(
+                        isObscured: AuthCubit.get(context).isObscured,
+                        controller:
+                            AuthCubit.get(context).signInPasswordController,
+                        title: S.of(context).password,
+                        icon: FontAwesomeIcons.lock,
+                        suffix: const Eye(),
+                      ),
                     ),
-                    Center(
-                      child: Text(
-                        S.of(context).no_account,
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                    const SliverToBoxAdapter(child: RememberMe()),
+                    SliverToBoxAdapter(
+                      child: MainAuthButton(
+                        text: S.of(context).sign_in,
+                        onTap: () {
+                          AuthCubit.get(context).signIn(context);
+                        },
+                      ),
+                    ),
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 32,
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Center(
+                        child: Text(
+                          S.of(context).no_account,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 32,
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 32,
+                      ),
                     ),
-                    SecondaryAuthButton(
-                      text: S.of(context).sign_up,
-                      onTap: () {
-                        Navigator.pushReplacementNamed(context, SignUpView.id);
-                      },
+                    SliverToBoxAdapter(
+                      child: SecondaryAuthButton(
+                        text: S.of(context).sign_up,
+                        onTap: () {
+                          Navigator.pushReplacementNamed(
+                              context, SignUpView.id);
+                        },
+                      ),
                     ),
-                    const SizedBox(
-                      height: 24,
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 24,
+                      ),
                     ),
                   ],
                 ),

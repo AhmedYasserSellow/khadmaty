@@ -37,4 +37,5 @@ abstract class NeutralColors {
 
 ThemeData theme = ThemeData(
   fontFamily: 'Inter',
+  scaffoldBackgroundColor: NeutralColors.k500,
 );

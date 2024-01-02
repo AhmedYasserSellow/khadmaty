@@ -15,13 +15,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(16),
-          bottomRight: Radius.circular(16),
-        ),
-      ),
-      backgroundColor: NeutralColors.k500,
+      scrolledUnderElevation: 0,
+      backgroundColor: Colors.transparent,
       leading: leading,
       title: Text(
         title,
@@ -40,5 +35,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size(double.maxFinite, 56);
+  Size get preferredSize => const Size(
+        double.maxFinite,
+        70,
+      );
 }

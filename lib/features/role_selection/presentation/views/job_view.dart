@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
+import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/role_selection/presentation/view_models/role_cubit/role_cubit.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/widgets/back_to_role_selection.dart';
@@ -24,65 +25,67 @@ class JobView extends StatelessWidget {
               title: S.of(context).job_selector,
               trailing: const [],
             ),
-            body: Padding(
-              padding: const EdgeInsets.only(
-                left: 24,
-                right: 24,
-              ),
-              child: CustomScrollView(
-                slivers: [
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 32,
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Text(
-                      S.of(context).job_selector_header,
-                      style: AuthAndRoleTextStyles.header,
-                    ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 4,
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Text(
-                      S.of(context).job_selector_sub_header,
-                      style: AuthAndRoleTextStyles.subHeader,
-                    ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 40,
-                    ),
-                  ),
-                  const ProviderRoleSelectionSection(),
-                  const SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: SizedBox(
-                      height: 40,
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Opacity(
-                      opacity:
-                          RoleCubit.get(context).currentIndex != -1 ? 1 : 0.5,
-                      child: MainAuthButton(
-                        text: S.of(context).continue_,
-                        onTap: () {
-                          RoleCubit.get(context).submitJob(context);
-                        },
+            body: Sheet(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 24,
+                  right: 24,
+                ),
+                child: CustomScrollView(
+                  slivers: [
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 32,
                       ),
                     ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 80,
+                    SliverToBoxAdapter(
+                      child: Text(
+                        S.of(context).job_selector_header,
+                        style: AuthAndRoleTextStyles.header,
+                      ),
                     ),
-                  )
-                ],
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 4,
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Text(
+                        S.of(context).job_selector_sub_header,
+                        style: AuthAndRoleTextStyles.subHeader,
+                      ),
+                    ),
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 40,
+                      ),
+                    ),
+                    const ProviderRoleSelectionSection(),
+                    const SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: SizedBox(
+                        height: 40,
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Opacity(
+                        opacity:
+                            RoleCubit.get(context).currentIndex != -1 ? 1 : 0.5,
+                        child: MainAuthButton(
+                          text: S.of(context).continue_,
+                          onTap: () {
+                            RoleCubit.get(context).submitJob(context);
+                          },
+                        ),
+                      ),
+                    ),
+                    const SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 80,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           );

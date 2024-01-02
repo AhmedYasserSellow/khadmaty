@@ -21,13 +21,7 @@ class RoleSelectorView extends StatelessWidget {
               title: S.of(context).role_selector,
               trailing: const [],
             ),
-            body: const Padding(
-              padding: EdgeInsets.only(
-                left: 24,
-                right: 24,
-              ),
-              child: SelectRoleSection(),
-            ),
+            body: const SelectRoleSection(),
           );
         },
       ),
