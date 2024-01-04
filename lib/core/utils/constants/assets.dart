@@ -1,6 +1,7 @@
 abstract class Assets {
   static const kAssetsPath = 'assets/images';
   static const kLogo = '$kAssetsPath/logo.png';
+  static const kLogoName = '$kAssetsPath/logo_name.png';
   static const kAccountCreated = '$kAssetsPath/account_created.png';
   static const kUser = '$kAssetsPath/user.png';
   static const kProvider = '$kAssetsPath/provider.png';

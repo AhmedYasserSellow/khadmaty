@@ -16,72 +16,78 @@ class EndDrawer extends StatelessWidget {
     return SafeArea(
       child: Drawer(
         backgroundColor: SecondaryColors.surface,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 32,
-            ),
-            Material(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
+        child: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  Material(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                    ),
+                    color: SecondaryColors.main,
+                    elevation: 5,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        profileModel.image,
+                        width: 150,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    '${S.of(context).your_name}: ' '${profileModel.name}',
+                    style: const TextStyle(color: Colors.black, fontSize: 18),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    '${S.of(context).email}: ' '${profileModel.email}',
+                    style: const TextStyle(color: Colors.black, fontSize: 18),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  DrawerItem(
+                    text: S.of(context).home,
+                    icon: FontAwesomeIcons.house,
+                    onTap: () {
+                      HomeCubit.get(context).changePage(true);
+                    },
+                    isSelected: HomeCubit.get(context).isHome,
+                  ),
+                  DrawerItem(
+                    text: S.of(context).chats,
+                    icon: FontAwesomeIcons.message,
+                    onTap: () {
+                      HomeCubit.get(context).changePage(false);
+                    },
+                    isSelected: !HomeCubit.get(context).isHome,
+                  ),
+                  const LanguageRadioListTile(),
+                  const Spacer(),
+                  const LogOutButton(),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    S.of(context).copy_right,
+                    style: const TextStyle(
+                      fontSize: 12,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                ],
               ),
-              color: SecondaryColors.main,
-              elevation: 5,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  profileModel.image,
-                  width: 150,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              '${S.of(context).your_name}: ' '${profileModel.name}',
-              style: const TextStyle(color: Colors.black, fontSize: 18),
-            ),
-            const SizedBox(
-              height: 4,
-            ),
-            Text(
-              '${S.of(context).email}: ' '${profileModel.email}',
-              style: const TextStyle(color: Colors.black, fontSize: 18),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            DrawerItem(
-              text: S.of(context).home,
-              icon: FontAwesomeIcons.house,
-              onTap: () {
-                HomeCubit.get(context).changePage(true);
-              },
-              isSelected: HomeCubit.get(context).isHome,
-            ),
-            DrawerItem(
-              text: S.of(context).chats,
-              icon: FontAwesomeIcons.message,
-              onTap: () {
-                HomeCubit.get(context).changePage(false);
-              },
-              isSelected: !HomeCubit.get(context).isHome,
-            ),
-            const LanguageRadioListTile(),
-            const Spacer(),
-            const LogOutButton(),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              S.of(context).copy_right,
-              style: const TextStyle(
-                fontSize: 12,
-              ),
-            ),
-            const SizedBox(
-              height: 8,
             ),
           ],
         ),
