@@ -46,6 +46,9 @@
     "copy_right" : "© 2023 Khadmaty All rights reserved.",
     "languages" : "Languages",
     "lang_name" : "English",
-    "other_lang_name" : "Arabic"
+    "other_lang_name" : "Arabic",
+    "name" : "Name",
+    "search" : "Search",
+    "no_result" : "No Result Found"
 
 }

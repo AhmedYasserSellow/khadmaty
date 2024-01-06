@@ -41,7 +41,7 @@ class JobView extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: Text(
                         S.of(context).job_selector_header,
-                        style: AuthAndRoleTextStyles.header,
+                        style: TextStyles.header,
                       ),
                     ),
                     const SliverToBoxAdapter(
@@ -52,7 +52,7 @@ class JobView extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: Text(
                         S.of(context).job_selector_sub_header,
-                        style: AuthAndRoleTextStyles.subHeader,
+                        style: TextStyles.subHeader,
                       ),
                     ),
                     const SliverToBoxAdapter(

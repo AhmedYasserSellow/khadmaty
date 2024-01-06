@@ -46,5 +46,8 @@
     "copy_right" : "© 2023 خدماتى , جميع الحقوق محفوظة",
     "languages" : "اللغات",
     "lang_name" : "الإنجليزية",
-    "other_lang_name" : "العربية"
+    "other_lang_name" : "العربية",
+    "name" : "الاسم",
+    "search" : "البحث",
+    "no_result" : "لا يوجد نتيجة للبحث"
 }

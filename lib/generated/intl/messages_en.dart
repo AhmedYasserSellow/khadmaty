@@ -56,8 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("What job can you offer ?"),
         "lang_name": MessageLookupByLibrary.simpleMessage("English"),
         "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "no_result": MessageLookupByLibrary.simpleMessage("No Result Found"),
         "other_lang": MessageLookupByLibrary.simpleMessage("عربى"),
         "other_lang_name": MessageLookupByLibrary.simpleMessage("Arabic"),
         "painter": MessageLookupByLibrary.simpleMessage("Painter"),
@@ -73,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose your role"),
         "role_selector_sub_header": MessageLookupByLibrary.simpleMessage(
             "Which type of user are you ?"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_in_header": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "sign_in_sub_header": MessageLookupByLibrary.simpleMessage(

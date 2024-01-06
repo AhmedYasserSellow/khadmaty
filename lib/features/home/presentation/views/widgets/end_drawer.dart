@@ -6,6 +6,7 @@ import 'package:graduation_project/features/home/presentation/view_models/home_c
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer_item.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/language_radio_list_tile.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/log_out.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/profile_box.dart';
 import 'package:graduation_project/generated/l10n.dart';
 
 class EndDrawer extends StatelessWidget {
@@ -21,40 +22,7 @@ class EndDrawer extends StatelessWidget {
             SliverFillRemaining(
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Material(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                    ),
-                    color: SecondaryColors.main,
-                    elevation: 5,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        profileModel.image,
-                        width: 150,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Text(
-                    '${S.of(context).your_name}: ' '${profileModel.name}',
-                    style: const TextStyle(color: Colors.black, fontSize: 18),
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    '${S.of(context).email}: ' '${profileModel.email}',
-                    style: const TextStyle(color: Colors.black, fontSize: 18),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  ProfileBox(profileModel: profileModel),
                   DrawerItem(
                     text: S.of(context).home,
                     icon: FontAwesomeIcons.house,

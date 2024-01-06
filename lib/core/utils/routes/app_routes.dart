@@ -6,6 +6,7 @@ import 'package:graduation_project/features/role_selection/presentation/views/ro
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
+import 'package:graduation_project/features/search/presentation/views/search_view.dart';
 import 'package:graduation_project/features/splash/presentation/views/splash_view.dart';
 
 Map<String, Widget Function(BuildContext context)> appRoutes = {
@@ -17,4 +18,5 @@ Map<String, Widget Function(BuildContext context)> appRoutes = {
   RoleSelectorView.id: (context) => const RoleSelectorView(),
   JobView.id: (context) => const JobView(),
   HomeView.id: (context) => const HomeView(),
+  SearchView.id: (context) => const SearchView(),
 };

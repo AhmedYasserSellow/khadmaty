@@ -54,14 +54,14 @@ class Role extends StatelessWidget {
                 children: [
                   Text(
                     roleModel.title,
-                    style: AuthAndRoleTextStyles.header,
+                    style: TextStyles.header,
                   ),
                   const SizedBox(
                     height: 4,
                   ),
                   Text(
                     roleModel.subtitle,
-                    style: AuthAndRoleTextStyles.subHeader,
+                    style: TextStyles.subHeader,
                   ),
                 ],
               )

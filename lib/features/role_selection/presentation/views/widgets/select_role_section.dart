@@ -30,7 +30,7 @@ class SelectRoleSection extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: Text(
                     S.of(context).role_selector_header,
-                    style: AuthAndRoleTextStyles.header,
+                    style: TextStyles.header,
                   ),
                 ),
                 const SliverToBoxAdapter(
@@ -41,7 +41,7 @@ class SelectRoleSection extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: Text(
                     S.of(context).role_selector_sub_header,
-                    style: AuthAndRoleTextStyles.subHeader,
+                    style: TextStyles.subHeader,
                   ),
                 ),
                 const SliverToBoxAdapter(

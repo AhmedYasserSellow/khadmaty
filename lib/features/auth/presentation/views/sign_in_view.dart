@@ -40,7 +40,7 @@ class SignInView extends StatelessWidget {
                     ),
                     SliverToBoxAdapter(
                       child: Text(S.of(context).sign_in_header,
-                          style: AuthAndRoleTextStyles.header),
+                          style: TextStyles.header),
                     ),
                     const SliverToBoxAdapter(
                       child: SizedBox(
@@ -49,7 +49,7 @@ class SignInView extends StatelessWidget {
                     ),
                     SliverToBoxAdapter(
                       child: Text(S.of(context).sign_in_sub_header,
-                          style: AuthAndRoleTextStyles.subHeader),
+                          style: TextStyles.subHeader),
                     ),
                     const SliverToBoxAdapter(
                       child: SizedBox(

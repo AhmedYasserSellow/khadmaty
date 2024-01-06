@@ -13,4 +13,5 @@ abstract class Assets {
   static const kBlacksmith = '$kAssetsPath/blacksmith.png';
   static const kHouseCleaner = '$kAssetsPath/house_cleaner.png';
   static const kTailor = '$kAssetsPath/tailor.png';
+  static const kNoResult = '$kAssetsPath/no_result.png';
 }

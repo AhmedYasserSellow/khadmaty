@@ -39,14 +39,14 @@ class RoleServiceBox extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  serviceModel.logo,
+                  serviceModel.logoAsset,
                   width: 60,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 Text(
-                  serviceModel.usedName,
+                  serviceModel.jobName,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,

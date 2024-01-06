@@ -26,14 +26,14 @@ class AccountCreatedBody extends StatelessWidget {
               ),
               Text(
                 S.of(context).account_created,
-                style: AuthAndRoleTextStyles.header,
+                style: TextStyles.header,
               ),
               const SizedBox(
                 height: 8,
               ),
               Text(
                 S.of(context).sign_in_sub_header,
-                style: AuthAndRoleTextStyles.subHeader,
+                style: TextStyles.subHeader,
               ),
               const SizedBox(
                 height: 16,

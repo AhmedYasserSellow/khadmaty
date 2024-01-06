@@ -55,7 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ما هى وظيفتك ؟"),
         "lang_name": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "no_account": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب ؟"),
+        "no_result":
+            MessageLookupByLibrary.simpleMessage("لا يوجد نتيجة للبحث"),
         "other_lang": MessageLookupByLibrary.simpleMessage("English"),
         "other_lang_name": MessageLookupByLibrary.simpleMessage("العربية"),
         "painter": MessageLookupByLibrary.simpleMessage("نقاش"),
@@ -71,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اختر دورك"),
         "role_selector_sub_header":
             MessageLookupByLibrary.simpleMessage("ما دورك فى التطبيق ؟"),
+        "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_in_header": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
         "sign_in_sub_header":

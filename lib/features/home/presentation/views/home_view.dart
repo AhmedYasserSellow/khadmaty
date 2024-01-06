@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/utils/constants/assets.dart';
 import 'package:graduation_project/core/utils/constants/firebase_constants.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
-import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
+import 'package:graduation_project/core/widgets/loading_indicator.dart';
 import 'package:graduation_project/core/widgets/logo.dart';
+import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/home/data/models/profile_model.dart';
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/end_drawer.dart';
@@ -54,12 +55,9 @@ class HomeView extends StatelessWidget {
                 ),
                 body: snapshot.hasData
                     ? HomeCubit.get(context).isHome
-                        ? const HomeViewBody()
-                        : const SizedBox()
-                    : const Center(
-                        child: CircularProgressIndicator(
-                        color: SecondaryColors.main,
-                      )),
+                        ? const Sheet(child: HomeViewBody())
+                        : const Sheet(child: SizedBox())
+                    : const CustomLoadingIndicator(),
               );
             },
           );
