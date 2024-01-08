@@ -550,11 +550,81 @@ class S {
     );
   }
 
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No Result Found`
   String get no_result {
     return Intl.message(
       'No Result Found',
       name: 'no_result',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GENERAL`
+  String get general {
+    return Intl.message(
+      'GENERAL',
+      name: 'general',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MORE`
+  String get more {
+    return Intl.message(
+      'MORE',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Account`
+  String get my_account {
+    return Intl.message(
+      'My Account',
+      name: 'my_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy & Policy`
+  String get privacy_policy {
+    return Intl.message(
+      'Privacy & Policy',
+      name: 'privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help`
+  String get help {
+    return Intl.message(
+      'Help',
+      name: 'help',
       desc: '',
       args: [],
     );

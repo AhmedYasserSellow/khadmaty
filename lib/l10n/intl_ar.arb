@@ -49,5 +49,12 @@
     "other_lang_name" : "العربية",
     "name" : "الاسم",
     "search" : "البحث",
-    "no_result" : "لا يوجد نتيجة للبحث"
+    "settings" : "الإعدادات",
+    "no_result" : "لا يوجد نتيجة للبحث",
+    "general" : "العامة",
+    "more" : "المزيد",
+    "my_account" : "حسابى",
+    "payment" : "الدفع",
+    "privacy_policy" : "سياسة الخصوصية",
+    "help" : "المساعدة"
 }

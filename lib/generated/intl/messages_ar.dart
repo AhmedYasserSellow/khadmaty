@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكترونى"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور ؟"),
+        "general": MessageLookupByLibrary.simpleMessage("العامة"),
+        "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "house_cleaner": MessageLookupByLibrary.simpleMessage("منظف منازل"),
         "iron_man": MessageLookupByLibrary.simpleMessage("مكواجى"),
@@ -55,6 +57,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ما هى وظيفتك ؟"),
         "lang_name": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
+        "more": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "my_account": MessageLookupByLibrary.simpleMessage("حسابى"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "no_account": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب ؟"),
         "no_result":
@@ -63,9 +67,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "other_lang_name": MessageLookupByLibrary.simpleMessage("العربية"),
         "painter": MessageLookupByLibrary.simpleMessage("نقاش"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
         "payment_service": MessageLookupByLibrary.simpleMessage(
             "ستكون خدمة الدفع الالكترونى متاحة قريبا"),
         "plumber": MessageLookupByLibrary.simpleMessage("سباك"),
+        "privacy_policy":
+            MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
         "provider_header": MessageLookupByLibrary.simpleMessage("مقدم خدمة"),
         "provider_sub_header": MessageLookupByLibrary.simpleMessage(""),
         "remember_me": MessageLookupByLibrary.simpleMessage("تذكرنى"),
@@ -75,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "role_selector_sub_header":
             MessageLookupByLibrary.simpleMessage("ما دورك فى التطبيق ؟"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
+        "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_in_header": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
         "sign_in_sub_header":

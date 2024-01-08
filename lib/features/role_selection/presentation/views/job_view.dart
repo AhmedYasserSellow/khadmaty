@@ -26,66 +26,60 @@ class JobView extends StatelessWidget {
               trailing: const [],
             ),
             body: Sheet(
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 24,
-                  right: 24,
-                ),
-                child: CustomScrollView(
-                  slivers: [
-                    const SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: 32,
+              child: CustomScrollView(
+                slivers: [
+                  const SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: 32,
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Text(
+                      S.of(context).job_selector_header,
+                      style: TextStyles.header,
+                    ),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: 4,
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Text(
+                      S.of(context).job_selector_sub_header,
+                      style: TextStyles.subHeader,
+                    ),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: 40,
+                    ),
+                  ),
+                  const ProviderRoleSelectionSection(),
+                  const SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: SizedBox(
+                      height: 40,
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Opacity(
+                      opacity:
+                          RoleCubit.get(context).currentIndex != -1 ? 1 : 0.5,
+                      child: MainAuthButton(
+                        text: S.of(context).continue_,
+                        onTap: () {
+                          RoleCubit.get(context).submitJob(context);
+                        },
                       ),
                     ),
-                    SliverToBoxAdapter(
-                      child: Text(
-                        S.of(context).job_selector_header,
-                        style: TextStyles.header,
-                      ),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: 80,
                     ),
-                    const SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: 4,
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Text(
-                        S.of(context).job_selector_sub_header,
-                        style: TextStyles.subHeader,
-                      ),
-                    ),
-                    const SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: 40,
-                      ),
-                    ),
-                    const ProviderRoleSelectionSection(),
-                    const SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: SizedBox(
-                        height: 40,
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Opacity(
-                        opacity:
-                            RoleCubit.get(context).currentIndex != -1 ? 1 : 0.5,
-                        child: MainAuthButton(
-                          text: S.of(context).continue_,
-                          onTap: () {
-                            RoleCubit.get(context).submitJob(context);
-                          },
-                        ),
-                      ),
-                    ),
-                    const SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: 80,
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
           );

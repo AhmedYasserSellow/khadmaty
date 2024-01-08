@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password ?"),
+        "general": MessageLookupByLibrary.simpleMessage("GENERAL"),
+        "help": MessageLookupByLibrary.simpleMessage("Help"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "house_cleaner": MessageLookupByLibrary.simpleMessage("House Cleaner"),
         "iron_man": MessageLookupByLibrary.simpleMessage("Iron Man"),
@@ -56,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("What job can you offer ?"),
         "lang_name": MessageLookupByLibrary.simpleMessage("English"),
         "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+        "more": MessageLookupByLibrary.simpleMessage("MORE"),
+        "my_account": MessageLookupByLibrary.simpleMessage("My Account"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
@@ -64,9 +68,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "other_lang_name": MessageLookupByLibrary.simpleMessage("Arabic"),
         "painter": MessageLookupByLibrary.simpleMessage("Painter"),
         "password": MessageLookupByLibrary.simpleMessage("Passwrod"),
+        "payment": MessageLookupByLibrary.simpleMessage("Payment"),
         "payment_service": MessageLookupByLibrary.simpleMessage(
             "Payment service is coming soon"),
         "plumber": MessageLookupByLibrary.simpleMessage("Plumber"),
+        "privacy_policy":
+            MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
         "provider_header": MessageLookupByLibrary.simpleMessage("Provider"),
         "provider_sub_header": MessageLookupByLibrary.simpleMessage(""),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
@@ -76,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "role_selector_sub_header": MessageLookupByLibrary.simpleMessage(
             "Which type of user are you ?"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_in_header": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "sign_in_sub_header": MessageLookupByLibrary.simpleMessage(

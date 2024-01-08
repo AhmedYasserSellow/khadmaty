@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/auth/presentation/views/auth_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_completed.dart';
+import 'package:graduation_project/features/my_account/presentation/views/account_view.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/job_view.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
-import 'package:graduation_project/features/search/presentation/views/search_view.dart';
 import 'package:graduation_project/features/splash/presentation/views/splash_view.dart';
 
 Map<String, Widget Function(BuildContext context)> appRoutes = {
@@ -18,5 +18,5 @@ Map<String, Widget Function(BuildContext context)> appRoutes = {
   RoleSelectorView.id: (context) => const RoleSelectorView(),
   JobView.id: (context) => const JobView(),
   HomeView.id: (context) => const HomeView(),
-  SearchView.id: (context) => const SearchView(),
+  MyAccountView.id: (context) => const MyAccountView(),
 };

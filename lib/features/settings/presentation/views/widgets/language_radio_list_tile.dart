@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/generated/l10n.dart';
 
@@ -13,6 +15,17 @@ class LanguageRadioListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      leading: const Icon(
+        FontAwesomeIcons.language,
+        color: SecondaryColors.main,
+      ),
+      tilePadding: EdgeInsets.zero,
+      childrenPadding: EdgeInsets.zero,
+      shape: const BeveledRectangleBorder(
+          borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30),
+      )),
       title: Text(S.of(context).languages),
       children: [
         RadioListTile(
@@ -21,7 +34,6 @@ class LanguageRadioListTile extends StatelessWidget {
           groupValue: HomeCubit.get(context).locale,
           onChanged: (value) {
             HomeCubit.get(context).changeLocaleFromHomePage(value.toString());
-            HomeCubit.get(context).scaffoldKey.currentState!.closeEndDrawer();
           },
         ),
         RadioListTile(
@@ -30,7 +42,6 @@ class LanguageRadioListTile extends StatelessWidget {
           groupValue: HomeCubit.get(context).locale,
           onChanged: (value) {
             HomeCubit.get(context).changeLocaleFromHomePage(value.toString());
-            HomeCubit.get(context).scaffoldKey.currentState!.closeEndDrawer();
           },
         ),
       ],

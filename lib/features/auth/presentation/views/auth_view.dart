@@ -40,65 +40,65 @@ class AuthView extends StatelessWidget {
                   Image.asset(Assets.kLogoName),
                   const Spacer(),
                   Sheet(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 24,
-                        right: 24,
-                      ),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 52,
+                    child: CustomScrollView(
+                      slivers: [
+                        SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 52,
+                              ),
+                              AuthButton(
+                                color: PrimaryColors.main,
+                                text: S.of(context).auth_email,
+                                icon: FontAwesomeIcons.solidEnvelope,
+                                onTap: () {
+                                  Navigator.pushNamed(context, SignInView.id);
+                                },
+                              ),
+                              AuthButton(
+                                color: Colors.black,
+                                text: S.of(context).auth_apple,
+                                icon: FontAwesomeIcons.apple,
+                              ),
+                              AuthButton(
+                                color: const Color(0xff5483EC),
+                                text: S.of(context).auth_google,
+                                icon: FontAwesomeIcons.google,
+                              ),
+                              AuthButton(
+                                color: const Color(0xff425692),
+                                text: S.of(context).auth_facebook,
+                                icon: FontAwesomeIcons.facebook,
+                              ),
+                              Text(
+                                S.of(context).no_account,
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 24,
+                              ),
+                              SecondaryAuthButton(
+                                text: S.of(context).sign_up,
+                                onTap: () {
+                                  Navigator.pushNamed(context, SignUpView.id);
+                                },
+                              ),
+                              const SizedBox(
+                                height: 32,
+                              ),
+                              HomeCubit.get(context).en
+                                  ? const TermsTextEN()
+                                  : const TermsTextAR(),
+                              const SizedBox(
+                                height: 24,
+                              ),
+                            ],
                           ),
-                          AuthButton(
-                            color: PrimaryColors.main,
-                            text: S.of(context).auth_email,
-                            icon: FontAwesomeIcons.solidEnvelope,
-                            onTap: () {
-                              Navigator.pushNamed(context, SignInView.id);
-                            },
-                          ),
-                          AuthButton(
-                            color: Colors.black,
-                            text: S.of(context).auth_apple,
-                            icon: FontAwesomeIcons.apple,
-                          ),
-                          AuthButton(
-                            color: const Color(0xff5483EC),
-                            text: S.of(context).auth_google,
-                            icon: FontAwesomeIcons.google,
-                          ),
-                          AuthButton(
-                            color: const Color(0xff425692),
-                            text: S.of(context).auth_facebook,
-                            icon: FontAwesomeIcons.facebook,
-                          ),
-                          Text(
-                            S.of(context).no_account,
-                            style: const TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 24,
-                          ),
-                          SecondaryAuthButton(
-                            text: S.of(context).sign_up,
-                            onTap: () {
-                              Navigator.pushNamed(context, SignUpView.id);
-                            },
-                          ),
-                          const SizedBox(
-                            height: 32,
-                          ),
-                          HomeCubit.get(context).en
-                              ? const TermsTextEN()
-                              : const TermsTextAR(),
-                          const SizedBox(
-                            height: 24,
-                          ),
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                   ),
                 ],

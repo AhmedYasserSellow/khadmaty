@@ -4,5 +4,5 @@ abstract class PrefsKeys {
   static const String kEmail = 'email';
   static const String kName = 'name';
   static const String kUID = 'UID';
-  static const String kLocale = 'name';
+  static const String kLocale = 'locale';
 }

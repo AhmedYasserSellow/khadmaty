@@ -8,7 +8,7 @@ class Sheet extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(250, 250, 250, 1),
+        color: Color.fromRGBO(255, 255, 255, 1),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(
             32,
@@ -18,7 +18,11 @@ class Sheet extends StatelessWidget {
           ),
         ),
       ),
-      child: child,
+      child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
+          child: child),
     );
   }
 }

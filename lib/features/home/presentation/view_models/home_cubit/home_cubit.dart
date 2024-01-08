@@ -9,13 +9,12 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
 
   static HomeCubit get(context) => BlocProvider.of(context);
-  bool isHome = true;
+  int currentIndex = 0;
   bool loggedIn = false;
   bool isRoleChossed = false;
   String email = '';
   String name = '';
   String uID = '';
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   bool en = true;
   String locale = 'en';
 
@@ -64,9 +63,8 @@ class HomeCubit extends Cubit<HomeState> {
     GetInstance.homeRepoImpl.signOut(context);
   }
 
-  void changePage(bool isHomePage) {
-    isHome = isHomePage;
-    scaffoldKey.currentState!.closeEndDrawer();
+  void changePage(int index) {
+    currentIndex = index;
     emit(ChangePageSuccess());
   }
 }
