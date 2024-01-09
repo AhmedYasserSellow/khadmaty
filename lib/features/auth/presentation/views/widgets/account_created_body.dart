@@ -13,40 +13,34 @@ class AccountCreatedBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Sheet(
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    Assets.kAccountCreated,
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  Text(
-                    S.of(context).account_created,
-                    style: TextStyles.header,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    S.of(context).sign_in_sub_header,
-                    style: TextStyles.subHeader,
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  MainAuthButton(
-                    text: S.of(context).sign_in,
-                    onTap: () {
-                      Navigator.pushReplacementNamed(context, SignInView.id);
-                    },
-                  ),
-                ],
-              ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              Assets.kAccountCreated,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Text(
+              S.of(context).account_created,
+              style: TextStyles.header,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              S.of(context).sign_in_sub_header,
+              style: TextStyles.subHeader,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            MainAuthButton(
+              text: S.of(context).sign_in,
+              onTap: () {
+                Navigator.pushReplacementNamed(context, SignInView.id);
+              },
             ),
           ],
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
+import 'package:graduation_project/core/widgets/page_builder.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/auth/presentation/view_models/auth_cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
@@ -21,51 +22,40 @@ class SignUpView extends StatelessWidget {
       create: (context) => AuthCubit(),
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
-          return Scaffold(
-            appBar:
-                CustomAppBar(title: S.of(context).sign_up, trailing: const []),
-            body: Sheet(
-              child: CustomScrollView(
-                slivers: [
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
+          return PageBuilder(slivers: [
+            SliverToBoxAdapter(
+                child: CustomAppBar(
+                    title: S.of(context).sign_up, trailing: const [])),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Sheet(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
                       height: 32,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Text(S.of(context).sign_in_header,
+                    Text(S.of(context).sign_in_header,
                         style: TextStyles.header),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Text(S.of(context).sign_up_sub_header,
+                    Text(S.of(context).sign_up_sub_header,
                         style: TextStyles.subHeader),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: CustomTextField(
+                    CustomTextField(
                       controller: AuthCubit.get(context).signUpNameController,
                       title: S.of(context).your_name,
                       icon: FontAwesomeIcons.user,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: CustomTextField(
+                    CustomTextField(
                       controller: AuthCubit.get(context).signUpEmailController,
                       title: S.of(context).email,
                       icon: FontAwesomeIcons.envelope,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: CustomTextField(
+                    CustomTextField(
                       isObscured: AuthCubit.get(context).isObscured,
                       suffix: const Eye(),
                       controller:
@@ -73,22 +63,16 @@ class SignUpView extends StatelessWidget {
                       title: S.of(context).password,
                       icon: FontAwesomeIcons.lock,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: MainAuthButton(
+                    MainAuthButton(
                       text: S.of(context).sign_up,
                       onTap: () {
                         AuthCubit.get(context).signUp(context);
                       },
                     ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Center(
+                    Center(
                       child: Text(
                         S.of(context).already_have_an_account,
                         style: const TextStyle(
@@ -98,29 +82,23 @@ class SignUpView extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: SecondaryAuthButton(
+                    SecondaryAuthButton(
                       text: S.of(context).sign_in,
                       onTap: () {
                         Navigator.pushReplacementNamed(context, SignInView.id);
                       },
                     ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
+                    const SizedBox(
                       height: 32,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          );
+          ]);
         },
       ),
     );

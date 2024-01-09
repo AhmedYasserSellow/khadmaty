@@ -23,6 +23,8 @@ class HomeViewBody extends StatelessWidget {
         builder: (context, snapshot) {
           return Sheet(
             child: CustomScrollView(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               slivers: [
                 const SliverToBoxAdapter(
                   child: SizedBox(

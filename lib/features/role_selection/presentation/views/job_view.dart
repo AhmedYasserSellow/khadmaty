@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
+import 'package:graduation_project/core/widgets/page_builder.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/role_selection/presentation/view_models/role_cubit/role_cubit.dart';
@@ -19,69 +20,74 @@ class JobView extends StatelessWidget {
       create: (context) => RoleCubit(),
       child: BlocBuilder<RoleCubit, RoleState>(
         builder: (context, state) {
-          return Scaffold(
-            appBar: CustomAppBar(
-              leading: const BackToRoleSelectionView(),
-              title: S.of(context).job_selector,
-              trailing: const [],
-            ),
-            body: Sheet(
-              child: CustomScrollView(
-                slivers: [
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 32,
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Text(
-                      S.of(context).job_selector_header,
-                      style: TextStyles.header,
-                    ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 4,
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Text(
-                      S.of(context).job_selector_sub_header,
-                      style: TextStyles.subHeader,
-                    ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 40,
-                    ),
-                  ),
-                  const ProviderRoleSelectionSection(),
-                  const SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: SizedBox(
-                      height: 40,
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Opacity(
-                      opacity:
-                          RoleCubit.get(context).currentIndex != -1 ? 1 : 0.5,
-                      child: MainAuthButton(
-                        text: S.of(context).continue_,
-                        onTap: () {
-                          RoleCubit.get(context).submitJob(context);
-                        },
-                      ),
-                    ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: 80,
-                    ),
-                  )
-                ],
+          return PageBuilder(
+            slivers: [
+              SliverToBoxAdapter(
+                child: CustomAppBar(
+                  leading: const BackToRoleSelectionView(),
+                  title: S.of(context).job_selector,
+                  trailing: const [],
+                ),
               ),
-            ),
+              SliverToBoxAdapter(
+                child: Sheet(
+                  child: CustomScrollView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 32,
+                            ),
+                            Text(
+                              S.of(context).job_selector_header,
+                              style: TextStyles.header,
+                            ),
+                            const SizedBox(
+                              height: 4,
+                            ),
+                            Text(
+                              S.of(context).job_selector_sub_header,
+                              style: TextStyles.subHeader,
+                            ),
+                            const SizedBox(
+                              height: 40,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const ProviderRoleSelectionSection(),
+                      SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Opacity(
+                              opacity: RoleCubit.get(context).currentIndex != -1
+                                  ? 1
+                                  : 0.5,
+                              child: MainAuthButton(
+                                text: S.of(context).continue_,
+                                onTap: () {
+                                  RoleCubit.get(context).submitJob(context);
+                                },
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 80,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),

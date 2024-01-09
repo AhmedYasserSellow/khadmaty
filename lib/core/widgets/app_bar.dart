@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
       scrolledUnderElevation: 0,
       backgroundColor: Colors.transparent,
       leading: leading,

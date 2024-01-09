@@ -25,15 +25,26 @@ class HomeView extends StatelessWidget {
             builder: (context, state) {
               return Scaffold(
                   extendBody: true,
-                  appBar: CustomAppBar(
-                    leading: const Logo(),
-                    title: S.of(context).title,
-                    trailing: const [],
+                  body: SafeArea(
+                    bottom: false,
+                    child: NestedScrollView(
+                      headerSliverBuilder: (context, innerBoxIsScrolled) {
+                        return [
+                          CustomAppBar(
+                            leading: const Logo(),
+                            title: S.of(context).title,
+                            trailing: const [],
+                          ),
+                        ];
+                      },
+                      body: snapshot.hasData
+                          ? applicationPages[
+                              HomeCubit.get(context).currentIndex]
+                          : const CustomLoadingIndicator(),
+                    ),
                   ),
-                  body: snapshot.hasData
-                      ? applicationPages[HomeCubit.get(context).currentIndex]
-                      : const CustomLoadingIndicator(),
-                  bottomNavigationBar: const CustomBottomNavBar());
+                  bottomNavigationBar:
+                      const SafeArea(child: CustomBottomNavBar()));
             },
           );
         });
