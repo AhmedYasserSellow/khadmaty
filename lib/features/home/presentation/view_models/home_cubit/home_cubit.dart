@@ -18,6 +18,8 @@ class HomeCubit extends Cubit<HomeState> {
   bool en = true;
   String locale = 'en';
 
+  ScrollController homeController = ScrollController();
+
   changeLocale() async {
     final prefs = await GetInstance.prefs;
     if (en) {
@@ -61,10 +63,12 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future signOut(BuildContext context) async {
     GetInstance.homeRepoImpl.signOut(context);
+    currentIndex = 0;
   }
 
   void changePage(int index) {
     currentIndex = index;
+    homeController.jumpTo(0);
     emit(ChangePageSuccess());
   }
 }

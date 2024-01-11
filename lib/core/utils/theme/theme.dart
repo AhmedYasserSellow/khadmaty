@@ -38,4 +38,7 @@ abstract class NeutralColors {
 ThemeData theme = ThemeData(
   fontFamily: 'Inter',
   scaffoldBackgroundColor: NeutralColors.k500,
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: Colors.transparent,
+  ),
 );

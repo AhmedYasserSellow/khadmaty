@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
-import 'package:graduation_project/core/widgets/page_builder.dart';
+import 'package:graduation_project/core/widgets/page_builders.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/auth/presentation/view_models/auth_cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_in_view.dart';
@@ -23,9 +23,7 @@ class SignUpView extends StatelessWidget {
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           return PageBuilder(slivers: [
-            SliverToBoxAdapter(
-                child: CustomAppBar(
-                    title: S.of(context).sign_up, trailing: const [])),
+            CustomAppBar(title: S.of(context).sign_up, trailing: const []),
             SliverFillRemaining(
               hasScrollBody: false,
               child: Sheet(

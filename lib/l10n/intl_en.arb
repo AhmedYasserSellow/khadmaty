@@ -56,6 +56,9 @@
     "my_account" : "My Account",
     "payment" : "Payment",
     "privacy_policy" : "Privacy & Policy",
-    "help" : "Help"
+    "help" : "Help",
+    "phone" : "Phone Number",
+    "birthday" : "Birthday",
+    "location" : "Location"
 
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
-import 'package:graduation_project/core/widgets/page_builder.dart';
+import 'package:graduation_project/core/widgets/page_builders.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/main_auth_button.dart';
 import 'package:graduation_project/features/role_selection/presentation/view_models/role_cubit/role_cubit.dart';
@@ -22,12 +22,10 @@ class JobView extends StatelessWidget {
         builder: (context, state) {
           return PageBuilder(
             slivers: [
-              SliverToBoxAdapter(
-                child: CustomAppBar(
-                  leading: const BackToRoleSelectionView(),
-                  title: S.of(context).job_selector,
-                  trailing: const [],
-                ),
+              CustomAppBar(
+                leading: const BackToRoleSelectionView(),
+                title: S.of(context).job_selector,
+                trailing: const [],
               ),
               SliverToBoxAdapter(
                 child: Sheet(

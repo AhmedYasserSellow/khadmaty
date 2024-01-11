@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Continue with Google"),
         "available_services":
             MessageLookupByLibrary.simpleMessage("Available Services"),
+        "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "blacksmith": MessageLookupByLibrary.simpleMessage("Blacksmith"),
         "carpenter": MessageLookupByLibrary.simpleMessage("Carpenter"),
         "chats": MessageLookupByLibrary.simpleMessage("Chats"),
@@ -58,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("What job can you offer ?"),
         "lang_name": MessageLookupByLibrary.simpleMessage("English"),
         "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+        "location": MessageLookupByLibrary.simpleMessage("Location"),
         "more": MessageLookupByLibrary.simpleMessage("MORE"),
         "my_account": MessageLookupByLibrary.simpleMessage("My Account"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -71,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "payment": MessageLookupByLibrary.simpleMessage("Payment"),
         "payment_service": MessageLookupByLibrary.simpleMessage(
             "Payment service is coming soon"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "plumber": MessageLookupByLibrary.simpleMessage("Plumber"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("Privacy & Policy"),

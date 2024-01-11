@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("متابعة بواسطة جوجل"),
         "available_services":
             MessageLookupByLibrary.simpleMessage("الخدمات المتاحة"),
+        "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
         "blacksmith": MessageLookupByLibrary.simpleMessage("حداد"),
         "carpenter": MessageLookupByLibrary.simpleMessage("نجار"),
         "chats": MessageLookupByLibrary.simpleMessage("المحادثات"),
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ما هى وظيفتك ؟"),
         "lang_name": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
+        "location": MessageLookupByLibrary.simpleMessage("العنوان"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "my_account": MessageLookupByLibrary.simpleMessage("حسابى"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
@@ -70,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
         "payment_service": MessageLookupByLibrary.simpleMessage(
             "ستكون خدمة الدفع الالكترونى متاحة قريبا"),
+        "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "plumber": MessageLookupByLibrary.simpleMessage("سباك"),
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),

@@ -26,7 +26,7 @@ class RoleAndJobRepoImpl extends RoleAndJobRepo {
                 merge: true,
               ));
 
-      prefs.setBool(PrefsKeys.kIsRoleChoosed, true);
+      await prefs.setBool(PrefsKeys.kIsRoleChoosed, true);
       if (context.mounted) {
         Navigator.pushReplacementNamed(
           context,
@@ -50,7 +50,7 @@ class RoleAndJobRepoImpl extends RoleAndJobRepo {
               ));
     }
 
-    prefs.setBool(PrefsKeys.kIsRoleChoosed, true);
+    await prefs.setBool(PrefsKeys.kIsRoleChoosed, true);
     if (context.mounted) {
       Navigator.pushReplacementNamed(
         context,
