@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الخدمات المتاحة"),
         "birthday": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
         "blacksmith": MessageLookupByLibrary.simpleMessage("حداد"),
+        "cancel": MessageLookupByLibrary.simpleMessage("العودة"),
         "carpenter": MessageLookupByLibrary.simpleMessage("نجار"),
         "chats": MessageLookupByLibrary.simpleMessage("المحادثات"),
         "continue_": MessageLookupByLibrary.simpleMessage("استمرار"),
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "© 2023 خدماتى , جميع الحقوق محفوظة"),
         "electrician": MessageLookupByLibrary.simpleMessage("كهربائى"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكترونى"),
+        "first_name": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور ؟"),
         "general": MessageLookupByLibrary.simpleMessage("العامة"),
@@ -58,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ما هى وظيفتك ؟"),
         "lang_name": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
+        "last_name": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
         "location": MessageLookupByLibrary.simpleMessage("العنوان"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "my_account": MessageLookupByLibrary.simpleMessage("حسابى"),
@@ -77,13 +80,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
         "provider_header": MessageLookupByLibrary.simpleMessage("مقدم خدمة"),
-        "provider_sub_header": MessageLookupByLibrary.simpleMessage(""),
+        "provider_sub_header": MessageLookupByLibrary.simpleMessage(
+            "شخص يستطيع تقديم خدمات لتطبيق خدماتى"),
         "remember_me": MessageLookupByLibrary.simpleMessage("تذكرنى"),
         "role_selector": MessageLookupByLibrary.simpleMessage("اختر دورك"),
         "role_selector_header":
             MessageLookupByLibrary.simpleMessage("اختر دورك"),
         "role_selector_sub_header":
             MessageLookupByLibrary.simpleMessage("ما دورك فى التطبيق ؟"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -91,6 +96,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_in_sub_header":
             MessageLookupByLibrary.simpleMessage("قم بتسجيل الدخول للاستمرار"),
         "sign_out": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "sign_out_header":
+            MessageLookupByLibrary.simpleMessage("تسجيل الخروج للحظة"),
+        "sign_out_sub_header": MessageLookupByLibrary.simpleMessage(
+            "هل انت متأكد من انك تريد تسجيل الخروج ؟"),
         "sign_up": MessageLookupByLibrary.simpleMessage("اشترك الأن"),
         "sign_up_header":
             MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
@@ -99,7 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tailor": MessageLookupByLibrary.simpleMessage("خياط"),
         "title": MessageLookupByLibrary.simpleMessage("خدماتى"),
         "user_header": MessageLookupByLibrary.simpleMessage("مستخدم"),
-        "user_sub_header": MessageLookupByLibrary.simpleMessage(""),
+        "user_sub_header": MessageLookupByLibrary.simpleMessage(
+            "شخص يستخدم تطبيق خدماتى للبحث عن خدمات"),
         "your_name": MessageLookupByLibrary.simpleMessage("اسمك")
       };
 }

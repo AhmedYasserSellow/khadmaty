@@ -180,6 +180,26 @@ class S {
     );
   }
 
+  /// `First Name`
+  String get first_name {
+    return Intl.message(
+      'First Name',
+      name: 'first_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get last_name {
+    return Intl.message(
+      'Last Name',
+      name: 'last_name',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Remember me`
   String get remember_me {
     return Intl.message(
@@ -280,10 +300,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Someone who can offer some jobs for Khdmaty app`
   String get provider_sub_header {
     return Intl.message(
-      '',
+      'Someone who can offer some jobs for Khdmaty app',
       name: 'provider_sub_header',
       desc: '',
       args: [],
@@ -300,10 +320,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Someone who use Khdmaty app to search for services`
   String get user_sub_header {
     return Intl.message(
-      '',
+      'Someone who use Khdmaty app to search for services',
       name: 'user_sub_header',
       desc: '',
       args: [],
@@ -655,6 +675,46 @@ class S {
     return Intl.message(
       'Location',
       name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out for a moment`
+  String get sign_out_header {
+    return Intl.message(
+      'Sign out for a moment',
+      name: 'sign_out_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to sign out your account for a moment?`
+  String get sign_out_sub_header {
+    return Intl.message(
+      'Are you sure you want to sign out your account for a moment?',
+      name: 'sign_out_sub_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
       desc: '',
       args: [],
     );

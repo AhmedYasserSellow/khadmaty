@@ -18,6 +18,7 @@ class HomeCubit extends Cubit<HomeState> {
   bool en = true;
   String locale = 'en';
 
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   ScrollController homeController = ScrollController();
 
   changeLocale() async {

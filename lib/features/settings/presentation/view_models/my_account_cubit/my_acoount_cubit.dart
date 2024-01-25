@@ -14,14 +14,14 @@ class MyAccountCubit extends Cubit<MyAccountState> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController birthdayController = TextEditingController();
-
+  ProfileModel? myProfileModel;
   void importData(ProfileModel profileModel) {
     nameController.text = profileModel.name;
     emailController.text = profileModel.email;
     phoneController.text = profileModel.phoneNumber;
     locationController.text = profileModel.location;
     birthdayController.text = profileModel.birthday;
-
+    myProfileModel = profileModel;
     emit(MyAccountImportDataSuccess());
   }
 }

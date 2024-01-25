@@ -1,7 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/services/service_locator.dart';
+import 'package:graduation_project/core/utils/theme/theme.dart';
+import 'package:intl/intl.dart';
 
 part 'auth_state.dart';
 
@@ -19,10 +21,26 @@ class AuthCubit extends Cubit<AuthState> {
       TextEditingController();
   final TextEditingController signUpPasswordController =
       TextEditingController();
-  final TextEditingController signUpNameController = TextEditingController();
+  final TextEditingController signUpFirstNameController =
+      TextEditingController();
+  final TextEditingController signUpLastNameController =
+      TextEditingController();
+  final TextEditingController signUpPhoneController = TextEditingController();
+  final TextEditingController signUpBirthDayController =
+      TextEditingController();
+  final TextEditingController signUpLocationController =
+      TextEditingController();
   Future signUp(BuildContext context) async {
-    GetInstance.authRepoImpl.signUp(context, signUpEmailController,
-        signUpPasswordController, signUpNameController);
+    GetInstance.authRepoImpl.signUp(
+      context,
+      signUpEmailController,
+      signUpPasswordController,
+      signUpFirstNameController,
+      signUpLastNameController,
+      signUpPhoneController,
+      signUpBirthDayController,
+      signUpLocationController,
+    );
   }
 
   Future signIn(BuildContext context) async {
@@ -39,5 +57,31 @@ class AuthCubit extends Cubit<AuthState> {
       isObscured = !isObscured;
     }
     emit(ChangePasswordVisibilty());
+  }
+
+  void selectDate(BuildContext context) {
+    showDatePicker(
+      builder: (context, child) {
+        return Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: const ColorScheme.light(
+                primary: PrimaryColors.main,
+              ),
+            ),
+            child: child!);
+      },
+      initialDatePickerMode: DatePickerMode.year,
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.utc(DateTime.now().year - 100, 1, 1),
+      lastDate: DateTime.now(),
+    ).then((value) {
+      if (value == null) {
+        AuthCubit.get(context).signUpBirthDayController.clear();
+      } else {
+        AuthCubit.get(context).signUpBirthDayController.text =
+            DateFormat('d/M/y').format(value);
+      }
+    });
   }
 }

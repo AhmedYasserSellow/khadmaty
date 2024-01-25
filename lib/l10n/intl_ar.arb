@@ -12,6 +12,8 @@
     "email" : "البريد الالكترونى",
     "password" : "كلمة المرور",
     "your_name" : "اسمك",
+    "first_name" : "الاسم الأول",
+    "last_name" : "الاسم الأخير",
     "remember_me" : "تذكرنى" ,
     "forgot_password" : "هل نسيت كلمة المرور ؟",
     "already_have_an_account" : "لديك حساب بالفعل ؟",
@@ -22,9 +24,9 @@
     "role_selector_header" : "اختر دورك",
     "role_selector_sub_header" : "ما دورك فى التطبيق ؟",
     "provider_header" : "مقدم خدمة",
-    "provider_sub_header" : "",
+    "provider_sub_header" : "شخص يستطيع تقديم خدمات لتطبيق خدماتى",
     "user_header" : "مستخدم",
-    "user_sub_header" : "",
+    "user_sub_header" : "شخص يستخدم تطبيق خدماتى للبحث عن خدمات",
     "continue_" : "استمرار",
     "job_selector" : "اختر وظيفتك",
     "job_selector_header" : "اختر وظيفتك",
@@ -59,5 +61,9 @@
     "help" : "المساعدة",
     "phone" : "رقم الهاتف",
     "birthday" : "تاريخ الميلاد",
-    "location" : "العنوان"
+    "location" : "العنوان",
+    "save" : "حفظ",
+    "sign_out_header" : "تسجيل الخروج للحظة",
+    "sign_out_sub_header" : "هل انت متأكد من انك تريد تسجيل الخروج ؟",
+    "cancel" : "العودة"
 }

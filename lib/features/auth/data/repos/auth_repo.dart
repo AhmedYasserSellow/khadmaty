@@ -10,6 +10,10 @@ abstract class AuthRepo {
     BuildContext context,
     TextEditingController emailController,
     TextEditingController passwordController,
-    TextEditingController nameController,
+    TextEditingController firstNameController,
+    TextEditingController lastNameController,
+    TextEditingController phoneController,
+    TextEditingController birthDayController,
+    TextEditingController locationController,
   );
 }

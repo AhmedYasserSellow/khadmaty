@@ -73,7 +73,11 @@ class AuthRepoImpl extends AuthRepo {
     BuildContext context,
     TextEditingController emailController,
     TextEditingController passwordController,
-    TextEditingController nameController,
+    TextEditingController firstNameController,
+    TextEditingController lastNameController,
+    TextEditingController phoneController,
+    TextEditingController birthDayController,
+    TextEditingController locationController,
   ) async {
     try {
       final UserCredential user =
@@ -82,14 +86,22 @@ class AuthRepoImpl extends AuthRepo {
         password: passwordController.text,
       );
       user;
-      user.user!.updateDisplayName(nameController.text);
+      user.user!.updateDisplayName(
+          '${firstNameController.text} ${lastNameController.text}');
       await GetInstance.store
           .collection(FirebaseConstants.kCollectionName)
           .doc(user.user!.uid)
           .set(
         {
-          FirebaseConstants.kName: nameController.text,
+          FirebaseConstants.kName:
+              '${firstNameController.text} ${lastNameController.text}',
+          FirebaseConstants.kLowerCaseName:
+              '${firstNameController.text.toLowerCase()} ${lastNameController.text.toLowerCase()}',
           FirebaseConstants.kEmail: emailController.text,
+          FirebaseConstants.kRole: '',
+          FirebaseConstants.kBirthday: birthDayController.text,
+          FirebaseConstants.kPhone: phoneController.text,
+          FirebaseConstants.kLocation: locationController.text,
         },
       );
       if (context.mounted) {

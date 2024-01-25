@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Available Services"),
         "birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
         "blacksmith": MessageLookupByLibrary.simpleMessage("Blacksmith"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "carpenter": MessageLookupByLibrary.simpleMessage("Carpenter"),
         "chats": MessageLookupByLibrary.simpleMessage("Chats"),
         "continue_": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -45,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "© 2023 Khadmaty All rights reserved."),
         "electrician": MessageLookupByLibrary.simpleMessage("Electrician"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password ?"),
         "general": MessageLookupByLibrary.simpleMessage("GENERAL"),
@@ -59,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("What job can you offer ?"),
         "lang_name": MessageLookupByLibrary.simpleMessage("English"),
         "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+        "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
         "more": MessageLookupByLibrary.simpleMessage("MORE"),
         "my_account": MessageLookupByLibrary.simpleMessage("My Account"),
@@ -78,13 +81,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacy_policy":
             MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
         "provider_header": MessageLookupByLibrary.simpleMessage("Provider"),
-        "provider_sub_header": MessageLookupByLibrary.simpleMessage(""),
+        "provider_sub_header": MessageLookupByLibrary.simpleMessage(
+            "Someone who can offer some jobs for Khdmaty app"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
         "role_selector": MessageLookupByLibrary.simpleMessage("Role Selector"),
         "role_selector_header":
             MessageLookupByLibrary.simpleMessage("Choose your role"),
         "role_selector_sub_header": MessageLookupByLibrary.simpleMessage(
             "Which type of user are you ?"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
@@ -92,6 +97,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_in_sub_header": MessageLookupByLibrary.simpleMessage(
             "Sign in to with your account to continue"),
         "sign_out": MessageLookupByLibrary.simpleMessage("Sign Out"),
+        "sign_out_header":
+            MessageLookupByLibrary.simpleMessage("Sign out for a moment"),
+        "sign_out_sub_header": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to sign out your account for a moment?"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "sign_up_header":
             MessageLookupByLibrary.simpleMessage("Create an account"),
@@ -100,7 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tailor": MessageLookupByLibrary.simpleMessage("Tailor"),
         "title": MessageLookupByLibrary.simpleMessage("Khdmaty"),
         "user_header": MessageLookupByLibrary.simpleMessage("User"),
-        "user_sub_header": MessageLookupByLibrary.simpleMessage(""),
+        "user_sub_header": MessageLookupByLibrary.simpleMessage(
+            "Someone who use Khdmaty app to search for services"),
         "your_name": MessageLookupByLibrary.simpleMessage("Your Name")
       };
 }

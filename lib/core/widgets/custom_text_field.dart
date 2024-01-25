@@ -9,12 +9,16 @@ class CustomTextField extends StatelessWidget {
     required this.controller,
     this.suffix,
     this.isObscured = false,
+    this.onTap,
+    this.keyboardType = TextInputType.name,
   });
   final String title;
   final IconData icon;
   final TextEditingController controller;
   final Widget? suffix;
   final bool isObscured;
+  final void Function()? onTap;
+  final TextInputType keyboardType;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,6 +36,8 @@ class CustomTextField extends StatelessWidget {
           height: 8,
         ),
         TextField(
+          keyboardType: keyboardType,
+          onTap: onTap,
           obscureText: isObscured,
           controller: controller,
           style: const TextStyle(color: Colors.black),

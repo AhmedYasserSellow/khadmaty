@@ -33,7 +33,7 @@ class SignUpView extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    Text(S.of(context).sign_in_header,
+                    Text(S.of(context).sign_up_header,
                         style: TextStyles.header),
                     const SizedBox(
                       height: 4,
@@ -43,15 +43,38 @@ class SignUpView extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    CustomTextField(
-                      controller: AuthCubit.get(context).signUpNameController,
-                      title: S.of(context).your_name,
-                      icon: FontAwesomeIcons.user,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomTextField(
+                            controller: AuthCubit.get(context)
+                                .signUpFirstNameController,
+                            title: S.of(context).first_name,
+                            icon: FontAwesomeIcons.user,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 16,
+                        ),
+                        Expanded(
+                          child: CustomTextField(
+                            controller:
+                                AuthCubit.get(context).signUpLastNameController,
+                            title: S.of(context).last_name,
+                            icon: FontAwesomeIcons.user,
+                          ),
+                        ),
+                      ],
                     ),
                     CustomTextField(
                       controller: AuthCubit.get(context).signUpEmailController,
                       title: S.of(context).email,
                       icon: FontAwesomeIcons.envelope,
+                    ),
+                    CustomTextField(
+                      controller: AuthCubit.get(context).signUpPhoneController,
+                      title: S.of(context).phone,
+                      icon: FontAwesomeIcons.phone,
                     ),
                     CustomTextField(
                       isObscured: AuthCubit.get(context).isObscured,
@@ -60,6 +83,22 @@ class SignUpView extends StatelessWidget {
                           AuthCubit.get(context).signUpPasswordController,
                       title: S.of(context).password,
                       icon: FontAwesomeIcons.lock,
+                    ),
+                    CustomTextField(
+                      keyboardType: TextInputType.none,
+                      controller:
+                          AuthCubit.get(context).signUpBirthDayController,
+                      title: S.of(context).birthday,
+                      icon: FontAwesomeIcons.calendar,
+                      onTap: () {
+                        AuthCubit.get(context).selectDate(context);
+                      },
+                    ),
+                    CustomTextField(
+                      controller:
+                          AuthCubit.get(context).signUpLocationController,
+                      title: S.of(context).location,
+                      icon: FontAwesomeIcons.locationPin,
                     ),
                     MainAuthButton(
                       text: S.of(context).sign_up,

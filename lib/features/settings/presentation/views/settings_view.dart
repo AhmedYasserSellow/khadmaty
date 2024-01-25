@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/theme/text_styles.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/home/data/models/profile_model.dart';
-import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
+import 'package:graduation_project/features/settings/presentation/view_models/my_account_cubit/my_acoount_cubit.dart';
 import 'package:graduation_project/features/settings/presentation/views/account_view.dart';
 import 'package:graduation_project/features/settings/presentation/views/languages_view.dart';
 import 'package:graduation_project/features/settings/presentation/views/widgets/custom_list_tile.dart';
+import 'package:graduation_project/features/settings/presentation/views/widgets/sign_out._message.dart';
 import 'package:graduation_project/generated/l10n.dart';
 
 class SettingsViewBody extends StatelessWidget {
@@ -55,10 +57,15 @@ class SettingsViewBody extends StatelessWidget {
                 // My Account
                 CustomListTile(
                   onTap: () {
-                    Navigator.pushNamed(
+                    Navigator.push(
                       context,
-                      MyAccountView.id,
-                      arguments: profileModel,
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider(
+                          create: (context) =>
+                              MyAccountCubit()..importData(profileModel),
+                          child: const MyAccountView(),
+                        ),
+                      ),
                     );
                   },
                   icon: FontAwesomeIcons.user,
@@ -100,7 +107,11 @@ class SettingsViewBody extends StatelessWidget {
                 // Sign Out
                 CustomListTile(
                   onTap: () {
-                    HomeCubit.get(context).signOut(context);
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return const SignOutMessage();
+                        });
                   },
                   icon: FontAwesomeIcons.arrowRightFromBracket,
                   title: S.of(context).sign_out,

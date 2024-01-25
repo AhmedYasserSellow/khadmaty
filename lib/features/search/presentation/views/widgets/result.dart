@@ -10,32 +10,30 @@ class SearchResult extends StatelessWidget {
   final SearchModel resultModel;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24,
+    return Container(
+      width: double.infinity,
+      height: 120,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(32),
+        color: SecondaryColors.surface,
       ),
-      child: Container(
-        width: double.infinity,
-        height: 120,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(32),
-          color: SecondaryColors.surface,
-        ),
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Image.asset(
-                '${Assets.kAssetsPath}/${resultModel.serviceModel.imageName}.png',
-              ),
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Image.asset(
+              '${Assets.kAssetsPath}/${resultModel.serviceModel.imageName}.png',
             ),
-            Column(
+          ),
+          Expanded(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   '${S.of(context).name}: '
                   '${resultModel.name}',
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(
                   height: 4,
@@ -45,18 +43,17 @@ class SearchResult extends StatelessWidget {
                 ),
               ],
             ),
-            const Spacer(),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                FontAwesomeIcons.message,
-              ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              FontAwesomeIcons.message,
             ),
-            const SizedBox(
-              width: 4,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            width: 4,
+          ),
+        ],
       ),
     );
   }

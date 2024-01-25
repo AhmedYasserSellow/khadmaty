@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduation_project/features/search/presentation/view_models/search_cubit/search_cubit.dart';
+import 'package:graduation_project/features/search/presentation/views/widgets/no_result.dart';
 import 'package:graduation_project/features/search/presentation/views/widgets/search_bar.dart';
 import 'package:graduation_project/features/search/presentation/views/widgets/search_result_view.dart';
 
@@ -9,11 +12,21 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
-      children: [
-        SearchResultView(),
-        CustomSearchBar(),
-      ],
+    return BlocProvider(
+      create: (context) => SearchCubit(),
+      child: BlocBuilder<SearchCubit, SearchState>(
+        builder: (context, state) {
+          return Stack(
+            children: [
+              SearchCubit.get(context).searchValue == null ||
+                      SearchCubit.get(context).searchValue == ''
+                  ? const NoResultView()
+                  : const SearchResultView(),
+              const CustomSearchBar(),
+            ],
+          );
+        },
+      ),
     );
   }
 }

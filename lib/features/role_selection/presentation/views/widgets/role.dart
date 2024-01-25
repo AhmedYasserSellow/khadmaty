@@ -20,52 +20,58 @@ class Role extends StatelessWidget {
       child: Material(
         elevation: isSelected ? 20 : 5,
         borderRadius: BorderRadius.circular(32),
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          width: double.infinity,
-          height: 120,
-          decoration: BoxDecoration(
-            border: isSelected
-                ? Border.all(
-                    color: SecondaryColors.main,
-                    width: 2,
-                  )
-                : null,
-            borderRadius: BorderRadius.circular(32),
-            color: NeutralColors.kWhite,
-          ),
-          child: Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32),
+        child: Flexible(
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            width: double.infinity,
+            height: 120,
+            decoration: BoxDecoration(
+              border: isSelected
+                  ? Border.all(
+                      color: SecondaryColors.main,
+                      width: 2,
+                    )
+                  : null,
+              borderRadius: BorderRadius.circular(32),
+              color: NeutralColors.kWhite,
+            ),
+            child: Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32),
+                  ),
+                  height: 80,
+                  width: 80,
+                  child: Image.asset(
+                    roleModel.imageName,
+                  ),
                 ),
-                height: 80,
-                width: 80,
-                child: Image.asset(
-                  roleModel.imageName,
+                const SizedBox(
+                  width: 16,
                 ),
-              ),
-              const SizedBox(
-                width: 16,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    roleModel.title,
-                    style: TextStyles.header,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        roleModel.title,
+                        style: TextStyles.header,
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        roleModel.subtitle,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyles.subHeader,
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    roleModel.subtitle,
-                    style: TextStyles.subHeader,
-                  ),
-                ],
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
