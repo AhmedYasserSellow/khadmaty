@@ -6,6 +6,7 @@ import 'package:graduation_project/core/utils/services/service_locator.dart';
 import 'package:graduation_project/core/widgets/snack_bar.dart';
 import 'package:graduation_project/features/auth/data/repos/auth_repo.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_completed.dart';
+import 'package:graduation_project/features/home/presentation/view_models/home_cubit/home_cubit.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 
@@ -28,9 +29,11 @@ class AuthRepoImpl extends AuthRepo {
       prefs.setString(
           PrefsKeys.kName, snapshot.data()![FirebaseConstants.kName]);
       prefs.setString(PrefsKeys.kUID, userCredentail.user!.uid);
-      final role = snapshot.data()![FirebaseConstants.kRole] ?? '';
+
+      final role = snapshot.data()![FirebaseConstants.kRole];
 
       if (context.mounted) {
+        HomeCubit.get(context).loadState();
         if (role != '') {
           Navigator.pushReplacementNamed(
             context,

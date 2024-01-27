@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Which type of user are you ?"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "search_chat": MessageLookupByLibrary.simpleMessage("Search Chat"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_in_header": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
@@ -108,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Create a new account to continue"),
         "tailor": MessageLookupByLibrary.simpleMessage("Tailor"),
         "title": MessageLookupByLibrary.simpleMessage("Khdmaty"),
+        "type_a_message":
+            MessageLookupByLibrary.simpleMessage("Type a message..."),
         "user_header": MessageLookupByLibrary.simpleMessage("User"),
         "user_sub_header": MessageLookupByLibrary.simpleMessage(
             "Someone who use Khdmaty app to search for services"),

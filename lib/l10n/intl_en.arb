@@ -65,6 +65,8 @@
     "save" : "Save",
     "sign_out_header" : "Sign out for a moment",
     "sign_out_sub_header" : "Are you sure you want to sign out your account for a moment?",
-    "cancel" : "Cancel"
+    "cancel" : "Cancel",
+    "type_a_message" : "Type a message...",
+    "search_chat" : "Search Chat"
 
 }

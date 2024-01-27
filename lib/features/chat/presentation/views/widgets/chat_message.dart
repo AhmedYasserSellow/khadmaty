@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/utils/theme/theme.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class ChatBottomNavBar extends StatelessWidget {
   const ChatBottomNavBar({super.key});
@@ -42,19 +43,16 @@ class ChatTextField extends StatelessWidget {
       child: Container(
         height: 52,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(50)),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(50),
+        ),
         child: TextField(
-          // controller: controller,
           style: const TextStyle(color: Colors.black),
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
-              // borderSide: const BorderSide(
-              //     width: 1, color: NeutralColors.k200),
               borderRadius: BorderRadius.circular(50),
             ),
             focusedBorder: OutlineInputBorder(
-              // borderSide: const BorderSide(
-              //     width: 1, color: NeutralColors.k200),
               borderRadius: BorderRadius.circular(50),
             ),
             suffixIcon: Row(
@@ -65,7 +63,7 @@ class ChatTextField extends StatelessWidget {
                   child: const Icon(
                     FontAwesomeIcons.paperclip,
                     color: NeutralColors.k200,
-                    size: 16,
+                    size: 18,
                   ),
                 ),
                 const SizedBox(
@@ -76,7 +74,7 @@ class ChatTextField extends StatelessWidget {
                   child: const Icon(
                     FontAwesomeIcons.camera,
                     color: NeutralColors.k200,
-                    size: 16,
+                    size: 18,
                   ),
                 ),
                 const SizedBox(
@@ -84,7 +82,7 @@ class ChatTextField extends StatelessWidget {
                 )
               ],
             ),
-            hintText: 'Type a message....',
+            hintText: S.of(context).type_a_message,
             hintStyle: const TextStyle(
               color: NeutralColors.k200,
               fontSize: 12,

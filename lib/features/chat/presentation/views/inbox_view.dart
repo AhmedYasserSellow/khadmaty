@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/utils/theme/theme.dart';
 import 'package:graduation_project/core/widgets/app_bar.dart';
 import 'package:graduation_project/core/widgets/page_builders.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
@@ -17,14 +18,47 @@ class InboxView extends StatelessWidget {
       slivers: [
         CustomAppBar(
           title: chatModel.name,
+          widget2: const Text(
+            'Online',
+            style: TextStyle(
+              color: NeutralColors.k200,
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          // trailing: [
+          //   IconButton(
+          //     onPressed: () {},
+          //     icon: const Icon(
+          //       FontAwesomeIcons.idBadge,
+          //       color: Colors.white,
+          //       // size: 22,
+          //     ),
+          //   ),
+          //   const SizedBox(
+          //     width: 12,
+          //   )
+          // ],
           trailing: const [],
         ),
         const SliverFillRemaining(
           hasScrollBody: false,
-          child: Sheet(),
+          child: Sheet(
+            child: Column(
+              children: [],
+            ),
+          ),
         ),
       ],
-      bottomNavigationBar: const ChatBottomNavBar(),
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const ChatBottomNavBar(),
+          SizedBox(
+            height: MediaQuery.of(context).viewInsets.bottom,
+          )
+        ],
+      ),
     );
   }
 }

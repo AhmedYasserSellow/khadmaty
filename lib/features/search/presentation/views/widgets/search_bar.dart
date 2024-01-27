@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/features/search/presentation/view_models/search_cubit/search_cubit.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, this.hintText = 'Search'});
+  const CustomSearchBar({super.key, required this.hintText});
   final String hintText;
   @override
   Widget build(BuildContext context) {

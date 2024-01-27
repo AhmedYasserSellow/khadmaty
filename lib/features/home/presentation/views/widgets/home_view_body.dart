@@ -58,8 +58,11 @@ class HomeViewBody extends StatelessWidget {
                     crossAxisCount: 2,
                   ),
                   itemBuilder: (context, index) {
-                    return ServiceBox(
-                      serviceModel: servicesList(context)[index],
+                    return GestureDetector(
+                      onTap: () {},
+                      child: ServiceBox(
+                        serviceModel: servicesList(context)[index],
+                      ),
                     );
                   },
                 ),

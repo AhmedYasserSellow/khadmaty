@@ -4,6 +4,7 @@ import 'package:graduation_project/features/search/presentation/view_models/sear
 import 'package:graduation_project/features/search/presentation/views/widgets/no_result.dart';
 import 'package:graduation_project/features/search/presentation/views/widgets/search_bar.dart';
 import 'package:graduation_project/features/search/presentation/views/widgets/search_result_view.dart';
+import 'package:graduation_project/generated/l10n.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({
@@ -22,7 +23,9 @@ class SearchViewBody extends StatelessWidget {
                       SearchCubit.get(context).searchValue == ''
                   ? const NoResultView()
                   : const SearchResultView(),
-              const CustomSearchBar(),
+              CustomSearchBar(
+                hintText: S.of(context).search,
+              ),
             ],
           );
         },

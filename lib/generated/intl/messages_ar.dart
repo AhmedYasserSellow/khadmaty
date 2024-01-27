@@ -90,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ما دورك فى التطبيق ؟"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
+        "search_chat":
+            MessageLookupByLibrary.simpleMessage("البحث فى المحادثات"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_in_header": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
@@ -107,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "قم بانشاء حساب جديد للاستمرار"),
         "tailor": MessageLookupByLibrary.simpleMessage("خياط"),
         "title": MessageLookupByLibrary.simpleMessage("خدماتى"),
+        "type_a_message": MessageLookupByLibrary.simpleMessage("اكتب رسالة..."),
         "user_header": MessageLookupByLibrary.simpleMessage("مستخدم"),
         "user_sub_header": MessageLookupByLibrary.simpleMessage(
             "شخص يستخدم تطبيق خدماتى للبحث عن خدمات"),
