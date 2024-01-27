@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/features/auth/presentation/views/auth_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_completed.dart';
+import 'package:graduation_project/features/chat/presentation/views/inbox_view.dart';
 import 'package:graduation_project/features/settings/presentation/views/account_view.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/job_view.dart';
 import 'package:graduation_project/features/role_selection/presentation/views/role_view.dart';
@@ -21,4 +22,5 @@ Map<String, Widget Function(BuildContext context)> appRoutes = {
   HomeView.id: (context) => const HomeView(),
   MyAccountView.id: (context) => const MyAccountView(),
   LanguagesView.id: (context) => const LanguagesView(),
+  InboxView.id: (context) => const InboxView(),
 };

@@ -10,7 +10,10 @@ class HomeRepoImpl extends HomeRepo {
     final prefs = await GetInstance.prefs;
     prefs.setBool(PrefsKeys.kIsLoggedIn, false);
     prefs.setBool(PrefsKeys.kIsRoleChoosed, false);
-    GetInstance.auth.signOut();
+    prefs.setString(PrefsKeys.kEmail, '');
+    prefs.setString(PrefsKeys.kName, '');
+    prefs.setString(PrefsKeys.kUID, '');
+    await GetInstance.auth.signOut();
 
     if (context.mounted) {
       Navigator.pushReplacementNamed(

@@ -1,10 +1,10 @@
-class ChatModel {
+class ChatHeaderModel {
   final String message;
   final String time;
   final String name;
   final String image;
 
-  ChatModel(
+  ChatHeaderModel(
       {required this.message,
       required this.time,
       required this.name,

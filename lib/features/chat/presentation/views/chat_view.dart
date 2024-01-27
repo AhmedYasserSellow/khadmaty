@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/utils/constants/assets.dart';
 import 'package:graduation_project/core/widgets/sheet.dart';
 import 'package:graduation_project/features/chat/data/models/chat_model.dart';
+import 'package:graduation_project/features/chat/presentation/views/inbox_view.dart';
 import 'package:graduation_project/features/chat/presentation/views/widgets/chat_header.dart';
 import 'package:graduation_project/features/search/presentation/views/widgets/search_bar.dart';
 
@@ -27,6 +28,13 @@ class ChatViewBody extends StatelessWidget {
                       itemCount: chatList.length,
                       itemBuilder: (context, index) {
                         return ChatHeader(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              InboxView.id,
+                              arguments: chatList[index],
+                            );
+                          },
                           chatModel: chatList[index],
                         );
                       }),
@@ -43,14 +51,14 @@ class ChatViewBody extends StatelessWidget {
   }
 }
 
-List<ChatModel> chatList = [
-  ChatModel(
+List<ChatHeaderModel> chatList = [
+  ChatHeaderModel(
     message: 'Hello mr jack',
     time: '12:08 PM',
     name: 'Jones',
     image: Assets.kElectrician,
   ),
-  ChatModel(
+  ChatHeaderModel(
     message: 'Hello I am a new user for khdmaty',
     time: '11:47 AM',
     name: 'Dico',
